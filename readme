@@ -1,0 +1,38 @@
+
+=======================================
+三字母缩写法
+三字母命名缩写法:核心单词的首字母,辅音,重音,规避常用缩写,尾字母
+命名格式动词_名次_形容词
+复数+s
+状态改变+ed
+数字num number
+列表lst list
+用户usr user
+名字nme name
+密码pwd password
+帐号aot account
+计数cnt count
+动作act action
+通用cmn common
+
+常用目录缩写
+cls class类文件
+cnf config配置文件
+cre core核心
+	bse_cls 
+doc document文档
+inc include第三方库组件
+mod module数据库模型
+lib library库 包括第三方库常用函数等
+pjt project项目
+tpl template页面模板
+index.php  入口文件
+=======================================
+文件路径命名约定
+目录后须自带路径分隔符 '/'
+目录或文件名前不需加分隔符 '/'
+
+=======================================
+
+
+

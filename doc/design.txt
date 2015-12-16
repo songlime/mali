@@ -1,0 +1,57 @@
+URL如 
+http://www.net.com/index.php/project/module/act/param1/param2/param3
+                                                 └─可略─┘
+http://www.net.com/project/module/act/param1/param2/param3
+http://www.net.com/project/module/act/param1-key/param2-key/param3-key
+http://www.net.com/project/module/act/param1/key1/param2/key2/param3/key3
+http://www.net.com/project-project/module/act/param1/param2/param3
+                                       └──默认───┘
+http://www.net.com/project-son/module/act/param1/param2/param3
+                                     └──子项──┘
+
+解析URL 和 构造URL
+
+/
+├cls
+├cnf
+| ├cnf.php
+├cre
+  bsecls
+  bsemod
+  bsectl
+├doc
+├inc
+├mod
+| ├pjt1
+| | ├mod1.php
+| | ├mod2.php
+| | └*
+| |  
+| └pjt2 
+|   ├mod1.php
+|   ├mod2.php
+|   └*
+|
+├pjt
+| ├pjt1
+| | ├pjt1
+| | ├mob
+| | └*
+| |  
+| └pjt2 
+|   ├pjt2
+|   ├mob
+|   └*
+|   
+├tpl
+├mod
+├mod
+├index.php
+
+
+
+|
+─
+├
+└
+┘
