@@ -17,6 +17,8 @@
 
 常用目录缩写
 cls class类文件
+	pjt
+		index.cls.php
 cnf config配置文件
 cre core核心
 	bse_cls 
