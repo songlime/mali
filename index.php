@@ -9,7 +9,7 @@
 
 */
 require 'cnf/cnf.php';
-require ROOT.'inc/fnc_cmn.php';
+require ROOT.'inc/fnc.php';
 //核心
 require ROOT.'cre/cre.php';
 

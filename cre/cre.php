@@ -7,7 +7,8 @@ class cre{
 	*/
 	public function __construct($uri){
 		$this->uri=$uri;
-		$this->url_dec();
+		$this->uri_arr=$this->url_dec();
+		var_dump($this->uri_arr);
 		l($uri);
 	}
 
@@ -24,31 +25,30 @@ class cre{
 	*/
 	public function go(){
 		chdir(ROOT);
-		var_dump($this->uri_arr);
 		chdir('cls/');
 		$arr=$this->uri_arr;
-		$arr1=current($arr);
-		if($arr1){
-			
-		}
 	}
 
 	/*
 	*解析请求URL
 	*/
 	public function url_dec(){
-		$uri_arr=explode('/',$this->uri);
-		if(in_array(URL_STT, $uri_arr)){
-			foreach ($uri_arr as $k => $v) {
-				if($v!=URL_STT)
-					unset($uri_arr[$k]);
-				else{
-					unset($uri_arr[$k]);
-					break;
-				}
+		//处理uri
+		$uri=$this->uri;
+		
+		$flag=true;
+		$arr=explode('/',$uri);
+		foreach ($arr as $k => $v) {
+			if($v==URL_STT && $flag){
+				unset($arr[$k]);
+				$flag=false;
 			}
+			if($flag)
+				unset($arr[$k]);
+			elseif($v=='')
+				unset($arr[$k]);
 		}
-		$this->uri_arr=$uri_arr;
+		return $this->uri_arr=$arr;
 	}
 
 
