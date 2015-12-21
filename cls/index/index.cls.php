@@ -1,5 +1,5 @@
 <?php
-class index{
+class index extends cst{
 	private param;
 
 	public function __construct(){

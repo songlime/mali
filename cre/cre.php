@@ -28,7 +28,9 @@ class cre{
 		chdir('cls/');
 		$arr=$this->uri_arr;
 		$arr1=current($arr);
-		if($arr1)
+		if($arr1){
+			
+		}
 	}
 
 	/*
