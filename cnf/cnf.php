@@ -21,6 +21,8 @@ define ('TPL_ROT', 'tpl/');
 //url_scm=1 URL Start url起点,在获取的数据中取此字段之后的数据为有效
 define('URL_SCM', 1);
 define('URL_STT', '');
+define('URL_TAL', '.html');
+
 
 //数据库配置
 $db = array(

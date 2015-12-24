@@ -7,7 +7,8 @@ class cre{
 	*/
 	public function __construct($uri){
 		$this->uri=$uri;
-		$this->uri_arr=$this->url_dec();
+		$this->go();
+		echo 'cre __construct';
 		var_dump($this->uri_arr);
 		l($uri);
 	}
@@ -24,9 +25,10 @@ class cre{
 	*开始
 	*/
 	public function go(){
+		$this->uri_arr=$this->url_dec();
+		$arr=$this->uri_arr;
 		chdir(ROOT);
 		chdir('cls/');
-		$arr=$this->uri_arr;
 	}
 
 	/*
@@ -35,7 +37,6 @@ class cre{
 	public function url_dec(){
 		//处理uri
 		$uri=$this->uri;
-		
 		$flag=true;
 		$arr=explode('/',$uri);
 		foreach ($arr as $k => $v) {
@@ -47,6 +48,12 @@ class cre{
 				unset($arr[$k]);
 			elseif($v=='')
 				unset($arr[$k]);
+		}
+		$url_tal=explode(',', URL_TAL);
+		foreach ($url_tal as $k => $v) {
+			if(substr($end_arr, 0-strlen(URL_TAL))){
+
+			}
 		}
 		return $this->uri_arr=$arr;
 	}
