@@ -8,7 +8,6 @@ class cre{
 	public function __construct($uri){
 		$this->uri=$uri;
 		$this->go();
-		var_dump($this->uri_arr);
 		l($uri);
 	}
 
@@ -25,8 +24,45 @@ class cre{
 	*/
 	public function go(){
 		$arr=$this->uri_arr=$this->url_dec($this->uri);
-		chdir(ROOT);
-		chdir('cls/');
+		//解析arr
+		$req_arr=array();
+		$flg=false;
+		$mod=NULL;
+		while (current($arr)){
+			$v=current($arr);
+			if(!isset($req_arr['pjt'])){
+				$cls_pth=ROOT.'cls/';
+				if(is_dir($cls_pth.$v)){
+					$req_arr['pjt']=$v;
+					next($arr);
+				}
+				else //默认项目
+					$req_arr['pjt']='web';
+				require_once $cls_pth.$req_arr['pjt'].'/cst.cls.php';
+			}
+			elseif(!isset($req_arr['mod'])){
+				if(is_file($cls_pth.$req_arr['pjt'].'/'.$v.'.cls.php')){
+					$req_arr['mod']=$v;
+					next($arr);
+				}
+				else //默认类文件
+					$req_arr['mod']='dft';
+				require_once $cls_pth.$req_arr['pjt'].'/'.$req_arr['mod'].'.cls.php';
+				$mod=new $req_arr['mod']();
+			}
+			elseif(!isset($req_arr['act'])){
+				if(method_exists($mod,$v)){
+					$req_arr['act']=$v;
+					next($arr);
+				}
+				else //默认方法
+					$req_arr['act']='index';
+			}
+			else{//处理参数
+				$req_arr[$v]=next($arr);
+				next($arr);
+			}
+		}
 	}
 
 	/*
@@ -54,25 +90,8 @@ class cre{
 		}
 		$arr=array_values($arr);
 		var_dump($arr);
-		//遍历函数,识别请求
-		foreach ($arr as $k=>$v) {
-			if($k==0){
-				$cls_pth=ROOT.'cls/';
-				$req_arr['p']=;
-			}
-			elseif($k==1){
-
-			}
-			elseif($k%2){
-
-			}
-			elseif(!$k%2){
-
-			}
-		}
-		return $this->uri_arr=$req_arr;
+		return $arr;
 	}
-
 
 	/*
 	*构造URL

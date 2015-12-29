@@ -1,9 +1,9 @@
 <?php
-class index extends cst{
-	private param;
+class dft extends cst{
+	private $param;
 
 	public function __construct(){
-
+		parent::__construct();
 	}
 
 	public function __destruct(){

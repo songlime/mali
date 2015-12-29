@@ -1,17 +1,17 @@
 <?php
 class cst{
-	private name;
+	private $name;
 	
 	public function __construct(){
-
+		echo 'index/cst/construct';
 	}
 
-	public function __destruct($value=''){
+	public function __destruct(){
 		
 	}
 
 	public function f(){
-
+		
 	}
 }
 ?>

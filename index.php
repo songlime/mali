@@ -14,5 +14,4 @@ require ROOT.'inc/fnc.php';
 require ROOT.'cre/cre.php';
 $cre =new cre($_SERVER['REQUEST_URI']);
 
-
 ?>
