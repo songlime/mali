@@ -7,6 +7,7 @@ class cre{
 	*/
 	public function __construct($uri){
 		$this->uri=$uri;
+		$this->ssn_hnd();
 		$this->go();
 		l($uri);
 	}
@@ -23,6 +24,7 @@ class cre{
 	*开始
 	*/
 	public function go(){
+		//解析URL返回数组
 		$arr=$this->uri_arr=$this->url_dec($this->uri);
 		//解析arr
 		$req_arr=array();
@@ -63,6 +65,8 @@ class cre{
 				next($arr);
 			}
 		}
+
+
 	}
 
 	/*
@@ -91,6 +95,10 @@ class cre{
 		$arr=array_values($arr);
 		var_dump($arr);
 		return $arr;
+	}
+
+	public function ssn_hnd(){
+		session_start();
 	}
 
 	/*
