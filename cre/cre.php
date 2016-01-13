@@ -5,10 +5,9 @@ class cre{
 	/*
 	*构造函数
 	*/
-	public function __construct($uri){
+	public function __construct($uri,$cnf=''){
 		$this->uri=$uri;
-		$this->ssn_hnd();
-		$this->go();
+		$this->ssn_hnd();//处理session
 		l($uri);
 	}
 

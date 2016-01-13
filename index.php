@@ -13,5 +13,5 @@ require ROOT.'inc/fnc.php';
 //核心
 require ROOT.'cre/cre.php';
 $cre =new cre($_SERVER['REQUEST_URI']);
-
+$cre->go();
 ?>
