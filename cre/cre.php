@@ -27,6 +27,7 @@ class cre{
 		$arr=$this->uri_arr=$this->url_dec($this->uri);
 		//解析arr
 		$req_arr=array();
+		$req_prm=array();
 		$flg=false;
 		$mod=NULL;
 		while (current($arr)){
@@ -60,12 +61,15 @@ class cre{
 					$req_arr['act']='index';
 			}
 			else{//处理参数
-				$req_arr[$v]=next($arr);
+				if(URL_SCM==1){
+					$req_prm[]=next($arr);
+				}
+				elseif(URL_SCM==2){
+					$req_prm[$v]=next($arr);
+				}
 				next($arr);
 			}
 		}
-
-
 	}
 
 	/*
@@ -76,7 +80,7 @@ class cre{
 		$flag=true;
 		$arr=explode('/',$uri);
 		foreach ($arr as $k => $v) {//从起始标识以后开始获取数据
-			if($v==URL_STT && $flag){
+			if($v==URL_SAT && $flag){
 				$flag=false;
 				unset($arr[$k]);
 			}

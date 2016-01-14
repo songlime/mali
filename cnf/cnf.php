@@ -16,11 +16,13 @@ define ('DOMAIN', $_SERVER['HTTP_HOST'].'/');
 define ('TPL_ROT', 'tpl/');
 
 
-//URL模式 URL Scheme 
-//1:http://www.a.com/index/list/a/1/b/2/c/3  2:http://www.a.com/index/list/1/2/3  3:http://www.a.com/index.php?m=index&c=list&a=1&b=2
+//URL模式 URL_Scheme URL_START URL_TAIL
+//1:http://www.a.com/index/list/1/2/3  
+//2:http://www.a.com/index/list/a/1/b/2/c/3  
+//3:http://www.a.com/index.php?m=index&c=list&a=1&b=2
 //url_scm=1 URL Start url起点,在获取的数据中取此字段之后的数据为有效
 define('URL_SCM', 1);
-define('URL_STT', '');
+define('URL_SAT', '');
 define('URL_TAL', '.html,.htm,.xml');
 
 
