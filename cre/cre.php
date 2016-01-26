@@ -25,7 +25,17 @@ class cre{
 	public function go(){
 		//解析URL返回数组
 		$arr=$this->uri_arr=$this->url_dec($this->uri);
-		//解析arr
+
+		//访问主页
+		if(!$arr){
+			$arr=array(
+				'pjt'=>'web',
+				'mod'=>'dft',
+				'act'=>'index',
+			);
+		}
+
+		//解析arr并加载数据
 		$req_arr=array();
 		$req_prm=array();
 		$flg=false;
@@ -69,6 +79,9 @@ class cre{
 				}
 				next($arr);
 			}
+
+			//执行函数
+			//$obj->function();
 		}
 	}
 
