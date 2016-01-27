@@ -26,7 +26,7 @@ class cre{
 		//解析URL返回数组
 		$arr=$this->uri_arr=$this->url_dec($this->uri);
 
-		//访问主页
+		//默认操作
 		if(!$arr){
 			$arr=array(
 				'pjt'=>'web',
@@ -36,10 +36,8 @@ class cre{
 		}
 
 		//解析arr并加载数据
-		$req_arr=array();
-		$req_prm=array();
-		$flg=false;
-		$mod=NULL;
+		$req_arr=$req_prm=array();
+		$flg=$mod=NULL;
 		while (current($arr)){
 			$v=current($arr);
 			if(!isset($req_arr['pjt'])){
