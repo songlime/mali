@@ -1,7 +1,7 @@
 <?php
 class cre{
 	private $uri,$uri_arr;
-
+	public $mod;
 	/*
 	*构造函数
 	*/
@@ -35,11 +35,12 @@ class cre{
 			);
 		}
 
-		//解析arr并加载数据
+		//解析arr并加载数据,执行操作
 		$req_arr=$req_prm=array();
 		$flg=$mod=NULL;
 		while (current($arr)){
 			$v=current($arr);
+			//项目名
 			if(!isset($req_arr['pjt'])){
 				$cls_pth=ROOT.'cls/';
 				if(is_dir($cls_pth.$v)){
@@ -48,8 +49,8 @@ class cre{
 				}
 				else //默认项目
 					$req_arr['pjt']='web';
-				require_once $cls_pth.$req_arr['pjt'].'/cst.cls.php';
 			}
+			//模块名
 			elseif(!isset($req_arr['mod'])){
 				if(is_file($cls_pth.$req_arr['pjt'].'/'.$v.'.cls.php')){
 					$req_arr['mod']=$v;
@@ -57,9 +58,13 @@ class cre{
 				}
 				else //默认类文件
 					$req_arr['mod']='dft';
+				//加载类文件
+				//处理默认类,执行预处理方法.
+				require_once $cls_pth.$req_arr['pjt'].'/cst.cls.php';
 				require_once $cls_pth.$req_arr['pjt'].'/'.$req_arr['mod'].'.cls.php';
-				$mod=new $req_arr['mod']();
+				$this->mod=new $req_arr['mod']();
 			}
+			//操作名
 			elseif(!isset($req_arr['act'])){
 				if(method_exists($mod,$v)){
 					$req_arr['act']=$v;
@@ -68,7 +73,8 @@ class cre{
 				else //默认方法
 					$req_arr['act']='index';
 			}
-			else{//处理参数
+			//处理参数
+			else{
 				if(URL_SCM==1){
 					$req_prm[]=next($arr);
 				}
@@ -79,7 +85,8 @@ class cre{
 			}
 
 			//执行函数
-			//$obj->function();
+			var_dump($this->mod);
+			$this->mod->index();
 		}
 	}
 
