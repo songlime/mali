@@ -25,7 +25,6 @@ class cre{
 	public function go(){
 		//解析URL返回数组
 		$arr=$this->uri_arr=$this->url_dec($this->uri);
-
 		//默认操作
 		if(!$arr){
 			$arr=array(
@@ -34,13 +33,12 @@ class cre{
 				'act'=>'index',
 			);
 		}
-
 		//解析arr并加载数据,执行操作
 		$req_arr=$req_prm=array();
 		$flg=$mod=NULL;
 		while (current($arr)){
 			$v=current($arr);
-			//项目名
+			// 项目名
 			if(!isset($req_arr['pjt'])){
 				$cls_pth=ROOT.'cls/';
 				if(is_dir($cls_pth.$v)){
@@ -54,7 +52,6 @@ class cre{
 			elseif(!isset($req_arr['mod'])){
 				if(is_file($cls_pth.$req_arr['pjt'].'/'.$v.'.cls.php')){
 					$req_arr['mod']=$v;
-					next($arr);
 				}
 				else //默认类文件
 					$req_arr['mod']='dft';
@@ -73,9 +70,10 @@ class cre{
 				else //默认方法
 					$req_arr['act']='index';
 			}
+
 			//处理参数
 			else{
-				if(URL_SCM==1){
+				if(URL_SCM==1){//默认是1,不同的URL构造模式,解析方式也不同.
 					$req_prm[]=next($arr);
 				}
 				elseif(URL_SCM==2){
@@ -83,11 +81,9 @@ class cre{
 				}
 				next($arr);
 			}
-
-			//执行函数
-			var_dump($this->mod);
-			$this->mod->index();
 		}
+		//执行函数
+		$this->mod->index();
 	}
 
 	/*
