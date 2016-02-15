@@ -27,13 +27,8 @@ class cre{
 		//解析URL返回数组
 		$arr=$this->uri_arr=$this->url_dec($this->uri);
 		//默认操作
-		if(!$arr){
-			$arr=array(
-				'pjt'=>'web',
-				'mod'=>'dft',
-				'act'=>'index',
-			);
-		}
+		if(!$arr)
+			$arr=array('pjt'=>'web','mod'=>'dft','act'=>'index',);
 		//解析arr并加载数据,执行操作
 		$req_arr=$req_prm=array();
 		$flg=$mod=NULL;
@@ -41,8 +36,8 @@ class cre{
 			$v=current($arr);
 			// 项目名
 			if(!isset($req_arr['pjt'])){
-				$cls_pth=ROOT.'cls/';
-				if(is_dir($cls_pth.$v)){
+				$ctl_pth=ROOT.'ctl/';
+				if(is_dir($ctl_pth.$v)){
 					$req_arr['pjt']=$v;
 					next($arr);
 				}
@@ -51,15 +46,15 @@ class cre{
 			}
 			//模块名
 			elseif(!isset($req_arr['mod'])){
-				if(is_file($cls_pth.$req_arr['pjt'].'/'.$v.'.cls.php')){
+				if(is_file($ctl_pth.$req_arr['pjt'].'/'.$v.'.cls.php')){
 					$req_arr['mod']=$v;
 				}
 				else //默认类文件
 					$req_arr['mod']='dft';
 				//加载类文件
 				//处理默认类,执行预处理方法.
-				require_once $cls_pth.$req_arr['pjt'].'/cst.cls.php';
-				require_once $cls_pth.$req_arr['pjt'].'/'.$req_arr['mod'].'.cls.php';
+				require_once $ctl_pth.$req_arr['pjt'].'/cst.cls.php';
+				require_once $ctl_pth.$req_arr['pjt'].'/'.$req_arr['mod'].'.cls.php';
 				$this->mod=new $req_arr['mod']();
 			}
 			//操作名
@@ -74,7 +69,7 @@ class cre{
 
 			//处理参数
 			else{
-				if(URL_SCM==1){//默认是1,不同的URL构造模式,解析方式也不同.
+				if(URL_SCM==1){//默认是1,不同的URL模式,构造和解析方式也不同.
 					$req_prm[]=next($arr);
 				}
 				elseif(URL_SCM==2){
