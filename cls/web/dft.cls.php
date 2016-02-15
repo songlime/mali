@@ -1,5 +1,5 @@
 <?php
-class dft extends cst{
+class dft extends cls{
 	private $param;
 
 	public function __construct(){

@@ -2,21 +2,21 @@
 /*
 基础逻辑类
 */
-class bse_cls{
-	private cls_nme='bse_cls';
-	private nme;
+class cls{
+	private $cls_nme='bse_cls';
+	private $nme;
 
 	/*
 	构造函数
 	*/
-	void public function __construct(){
-		parent::__construct();
+	public function __construct(){
+
 	}
 
 	/*
 	析构函数
 	*/
-	void public function __destruct($value=''){
+	public function __destruct(){
 		
 	}
 
@@ -25,6 +25,13 @@ class bse_cls{
 	*/
 	public function get_cls_nme(){
 		return $this->cls_nme;
+	}
+
+	/*
+	*返回
+	*/
+	public function get_sth(){
+		return 'stb';
 	}
 
 }

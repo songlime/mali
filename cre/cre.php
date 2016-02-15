@@ -6,6 +6,7 @@ class cre{
 	*构造函数
 	*/
 	public function __construct($uri,$cnf=''){
+		require ROOT.'/cre/cls.php';
 		$this->uri=$uri;
 		$this->ssn_hnd();//处理session
 		l($uri);

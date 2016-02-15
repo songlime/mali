@@ -1,5 +1,5 @@
 <?php
-class cst{
+class cst extends cls{
 	private $name;
 	
 	public function __construct(){
