@@ -13,5 +13,7 @@ class cst extends cls{
 	public function f(){
 		
 	}
+
+
 }
 ?>

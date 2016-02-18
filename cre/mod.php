@@ -1,18 +1,24 @@
 <?php
-//基础模型类
+/*
+*数据模型类
+*/
 class mod{
-	private name;
-	public tab_nam;
+	private $nme;
+	public $tab_nme;
 
 	/**
 	*构造方法
 	*/
 	public function __construct($tab_nme){
-		$this->tab_nam=$tab_nam;
+		$this->tab_nme=$tab_nme;
 	}
 
 	public function __destruct(){
 
+	}
+
+	public function get_mod_nme(){
+		return $this->tab_nme;
 	}
 
 	//根据id获取单条数据

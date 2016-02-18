@@ -1,6 +1,6 @@
 <?php
 /*
-基础逻辑类
+业务模型类
 */
 class cls{
 	private $cls_nme='bse_cls';

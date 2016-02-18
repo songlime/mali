@@ -7,6 +7,8 @@ class cre{
 	*/
 	public function __construct($uri,$cnf=''){
 		require ROOT.'/cre/cls.php';
+		require ROOT.'/cre/ctl.php';
+		require ROOT.'/cre/mod.php';
 		$this->uri=$uri;
 		$this->ssn_hnd();//处理session
 		l($uri);
@@ -24,6 +26,8 @@ class cre{
 	*开始
 	*/
 	public function go(){
+		$ctl_pth=ROOT.'ctl/';
+
 		//解析URL返回数组
 		$arr=$this->uri_arr=$this->url_dec($this->uri);
 		//默认操作
@@ -36,7 +40,6 @@ class cre{
 			$v=current($arr);
 			// 项目名
 			if(!isset($req_arr['pjt'])){
-				$ctl_pth=ROOT.'ctl/';
 				if(is_dir($ctl_pth.$v)){
 					$req_arr['pjt']=$v;
 					next($arr);
@@ -46,15 +49,15 @@ class cre{
 			}
 			//模块名
 			elseif(!isset($req_arr['mod'])){
-				if(is_file($ctl_pth.$req_arr['pjt'].'/'.$v.'.cls.php')){
+				if(is_file($ctl_pth.$req_arr['pjt'].'/'.$v.'.ctl.php')){
 					$req_arr['mod']=$v;
 				}
 				else //默认类文件
 					$req_arr['mod']='dft';
 				//加载类文件
 				//处理默认类,执行预处理方法.
-				require_once $ctl_pth.$req_arr['pjt'].'/cst.cls.php';
-				require_once $ctl_pth.$req_arr['pjt'].'/'.$req_arr['mod'].'.cls.php';
+				require_once $ctl_pth.$req_arr['pjt'].'/cst.ctl.php';
+				require_once $ctl_pth.$req_arr['pjt'].'/'.$req_arr['mod'].'.ctl.php';
 				$this->mod=new $req_arr['mod']();
 			}
 			//操作名

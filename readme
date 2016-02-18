@@ -6,6 +6,7 @@
 复数+s
 状态改变+ed
 数字num number
+排名rnk rank
 列表lst list
 用户usr user
 名字nme name
@@ -14,18 +15,19 @@
 计数cnt count
 动作act action
 通用cmn common
-
+---------------------------------------
 常用目录缩写
-cls class类文件
+ctl control控制器用于接受请求,加载所需类,构造对象,调用方法
 	pjt
-		index.cls.php
+		index.ctl.php
+cls class 类文件 业务模型的抽象类,调用数据库或其他数据,实现业务逻辑,返回所需数据.
 cnf config配置文件
 cre core核心
 	bse_cls 
 doc document文档
 inc include第三方库组件
-mod module数据库模型
-lib library库 包括第三方库常用函数等
+mod module数据库模型抽象类 数据库层面的操作,构造sql语句,执行数据库增删改查操作,返回数据.
+lib library库 包括第三方库,常用函数等
 pjt project项目
 tpl template页面模板
 index.php  入口文件
@@ -33,8 +35,13 @@ index.php  入口文件
 文件路径命名约定
 目录后须自带路径分隔符 '/'
 目录或文件名前不需加分隔符 '/'
-
 =======================================
+请求处理示例
+=======================================
+=======================================
+=======================================
+=======================================
+
 
 
 

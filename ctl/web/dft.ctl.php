@@ -1,5 +1,5 @@
 <?php
-class dft extends cls{
+class dft extends ctl{
 	private $param;
 
 	public function __construct(){
@@ -14,6 +14,9 @@ class dft extends cls{
 		echo 'index';
 	}
 
+	public function reg(){
+		echo 'reg';
+	}
 }
 
 ?>
