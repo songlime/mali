@@ -15,6 +15,11 @@ define ('DOMAIN', $_SERVER['HTTP_HOST'].'/');
 //定于模板文件路路径
 define ('TPL_ROT', 'tpl/');
 
+define('CTL_PTH', 'ctl/');
+define('CLS_PTH', 'cls/');
+define('MOD_PTH', 'mod/');
+define('INC_PTH', 'inc/');
+define('LIB_PTH', 'lib/');
 
 //URL模式 URL_Scheme URL_START URL_TAIL
 //1:http://www.a.com/index/list/1/2/3  
