@@ -2,7 +2,7 @@
 /*
 *数据模型类
 */
-class mod{
+class mod extends cre{
 	private $nme;
 	public $tab_nme;
 

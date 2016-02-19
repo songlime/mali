@@ -2,7 +2,7 @@
 /*
 *控制器基类
 */
-class ctl{
+class ctl extends cre{
 	private $name;
 	
 	public function __construct(){

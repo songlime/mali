@@ -9,6 +9,7 @@ class usr extends ctl{
 	
 	public function __construct(){
 		echo 'index/cst/construct';
+		
 	}
 
 	public function __destruct(){
@@ -31,7 +32,9 @@ class usr extends ctl{
 	}
 
 	//列出所有用户
-	public function  usr_lst
+	public function  usr_lst(){
+
+	}
 
 }
 ?>

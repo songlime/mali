@@ -2,7 +2,7 @@
 /*
 业务模型类
 */
-class cls{
+class cls extends cre{
 	private $cls_nme='bse_cls';
 	private $nme;
 
