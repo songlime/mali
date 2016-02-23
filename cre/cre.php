@@ -113,6 +113,9 @@ class cre{
 		return $arr;
 	}
 
+	/*
+	*session处理
+	*/
 	public function ssn_hnd(){
 		session_start();
 	}
@@ -122,6 +125,44 @@ class cre{
 	*/
 	public function url_enc($cnt){
 
+	}
+
+	/*
+	*加载类文件并实例化对象
+	*/
+	public function cls($cls_nme,$pth){
+		if(int($pth)==1){
+			$cls_pth=CLS_PTH;
+		}
+		elseif(int($pth)==2){
+			$cls_pth=MOD_PTH;
+		}
+		else{
+			$cls_pth=$pth;
+		}
+		if(!is_file($cls_pth.$cls_nme.'cls.php')){
+			return false;
+		}
+		else{
+			require $cls_pth.$cls_nme.'cls.php';
+			$obj=new $cls_nme();
+			return &$obj;
+		}
+
+	}
+
+	/*
+	*实例化一个业务逻辑类
+	*/
+	public function new_cls($cls_nme){
+		cls
+	}
+
+	/*
+	*实例化一个数据模型类
+	*/
+	public function new_mod($mod_nme){
+		$file=$pth.$mod_nme;
 	}
 }
 ?>
