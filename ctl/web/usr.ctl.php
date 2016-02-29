@@ -4,12 +4,12 @@
 *含用户信息获取,注册登陆等
 *date 2016-02-18
 */
-class usr extends ctl{
-	private $name;
+class usr_ctl extends ctl{
+	private $usr;
+	private $nme;
 	
 	public function __construct(){
-		echo 'index/cst/construct';
-		
+		$this->usr=$this->new_ser('usr');
 	}
 
 	public function __destruct(){
@@ -18,12 +18,12 @@ class usr extends ctl{
 
 	//注册
 	public function reg(){
-		
+		var_dump($this->usr);
 	}
 
 	//登陆
 	public function log(){
-
+		
 	}
 
 	//获取指定用户信息

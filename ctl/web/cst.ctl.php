@@ -1,5 +1,5 @@
 <?php
-class cst extends cls{
+class cst_ctl extends ser{
 	private $name;
 	
 	public function __construct(){

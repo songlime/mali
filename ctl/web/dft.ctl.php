@@ -1,5 +1,5 @@
 <?php
-class dft extends ctl{
+class dft_ctl extends ctl{
 	private $param;
 
 	public function __construct(){

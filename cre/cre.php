@@ -6,9 +6,9 @@ class cre{
 	*构造函数
 	*/
 	public function __construct($uri,$cnf=''){
-		require ROOT.'/cre/cls.php';
+		require ROOT.'/cre/ser.php';
 		require ROOT.'/cre/ctl.php';
-		require ROOT.'/cre/mod.php';
+		require ROOT.'/cre/mdl.php';
 		$this->uri=$uri;
 		$this->ssn_hnd();//处理session
 		l($uri);
@@ -26,7 +26,7 @@ class cre{
 	*开始
 	*/
 	public function go(){
-		$ctl_pth=ROOT.'ctl/';
+		$ctl_pth=CTL_PTH;
 
 		//解析URL返回数组
 		$arr=$this->uri_arr=$this->url_dec($this->uri);
@@ -51,6 +51,7 @@ class cre{
 			elseif(!isset($req_arr['mod'])){
 				if(is_file($ctl_pth.$req_arr['pjt'].'/'.$v.'.ctl.php')){
 					$req_arr['mod']=$v;
+					next($arr);
 				}
 				else //默认类文件
 					$req_arr['mod']='dft';
@@ -58,7 +59,8 @@ class cre{
 				//处理默认类,执行预处理方法.
 				require_once $ctl_pth.$req_arr['pjt'].'/cst.ctl.php';
 				require_once $ctl_pth.$req_arr['pjt'].'/'.$req_arr['mod'].'.ctl.php';
-				$this->mod=new $req_arr['mod']();
+				$mod_nme=$req_arr['mod'].'_ctl';
+				$mod=new $mod_nme();
 			}
 			//操作名
 			elseif(!isset($req_arr['act'])){
@@ -68,6 +70,7 @@ class cre{
 				}
 				else //默认方法
 					$req_arr['act']='index';
+				$act=$req_arr['act'];
 			}
 
 			//处理参数
@@ -82,7 +85,7 @@ class cre{
 			}
 		}
 		//执行函数
-		$this->mod->index();
+		$mod->$act();
 	}
 
 	/*
@@ -128,41 +131,46 @@ class cre{
 	}
 
 	/*
-	*加载类文件并实例化对象
+	*加载指定路径的类文件并实例化对象
 	*/
-	public function cls($cls_nme,$pth){
-		if(int($pth)==1){
-			$cls_pth=CLS_PTH;
-		}
-		elseif(int($pth)==2){
-			$cls_pth=MOD_PTH;
-		}
-		else{
-			$cls_pth=$pth;
-		}
-		if(!is_file($cls_pth.$cls_nme.'cls.php')){
+	public function cls($cls,$pth,$fle){
+		if(!is_file($pth.$fle)){
 			return false;
 		}
 		else{
-			require $cls_pth.$cls_nme.'cls.php';
-			$obj=new $cls_nme();
-			return &$obj;
+			require $pth.$fle;
+			$obj=new $cls();
+			return $obj;
 		}
-
 	}
 
 	/*
 	*实例化一个业务逻辑类
 	*/
-	public function new_cls($cls_nme){
-		cls
+	public function new_ser($ser_nme){
+		$ser_fle=$ser_nme.'.ser.php';
+		$ser_nme.='_ser';
+		$ser=$this->cls($ser_nme,SER_PTH,$ser_fle);
+		if($ser)
+			return $ser;
+		else{
+			exit('code:1,can\'t load service');
+		}
 	}
 
 	/*
 	*实例化一个数据模型类
 	*/
 	public function new_mod($mod_nme){
-		$file=$pth.$mod_nme;
+		$fle=$ser_nme.'.mod.php';
+		$mod_nme.='_mod';
+		$mod=$this->cls($mod_nme,SER_PTH,$fle);
+		return $this->cls($mod_nme.'.mod.php',MOD_PTH);
+		if($mod)
+			return $mod;
+		else{
+			exit('code:2,can\'t load data model');
+		}
 	}
 }
 ?>
