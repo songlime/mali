@@ -1,5 +1,5 @@
 <?php
-class usr_ctl extends mdl{
+class usr_mdl extends mdl{
 	private $name;
 	
 	public function __construct(){
@@ -8,6 +8,14 @@ class usr_ctl extends mdl{
 
 	public function __destruct(){
 		
+	}
+
+	public function get_one(){
+		
+	}
+
+	public function edit(){
+
 	}
 }
 ?>

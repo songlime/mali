@@ -6,11 +6,12 @@ class cre{
 	*构造函数
 	*/
 	public function __construct($uri,$cnf=''){
+		$this->lod_cnf();//加载配置文件
+		$this->lod_fnc();//加载通用方法
 		require ROOT.'/cre/ser.php';
 		require ROOT.'/cre/ctl.php';
 		require ROOT.'/cre/mdl.php';
 		$this->uri=$uri;
-		$this->ssn_hnd();//处理session
 		l($uri);
 	}
 
@@ -36,6 +37,7 @@ class cre{
 		//解析arr并加载数据,执行操作
 		$req_arr=$req_prm=array();
 		$flg=$mod=NULL;
+		$i=0;
 		while (current($arr)){
 			$v=current($arr);
 			// 项目名
@@ -60,11 +62,10 @@ class cre{
 				require_once $ctl_pth.$req_arr['pjt'].'/cst.ctl.php';
 				require_once $ctl_pth.$req_arr['pjt'].'/'.$req_arr['mod'].'.ctl.php';
 				$mod_nme=$req_arr['mod'].'_ctl';
-				$mod=new $mod_nme();
 			}
 			//操作名
 			elseif(!isset($req_arr['act'])){
-				if(method_exists($mod,$v)){
+				if(method_exists($mod_nme,$v)){
 					$req_arr['act']=$v;
 					next($arr);
 				}
@@ -72,20 +73,21 @@ class cre{
 					$req_arr['act']='index';
 				$act=$req_arr['act'];
 			}
-
 			//处理参数
 			else{
 				if(URL_SCM==1){//默认是1,不同的URL模式,构造和解析方式也不同.
-					$req_prm[]=next($arr);
+					$req_prm[]=current($arr);
 				}
 				elseif(URL_SCM==2){
-					$req_prm[$v]=next($arr);
+					$req_prm[current($arr)]=next($arr);
 				}
 				next($arr);
 			}
 		}
 		//执行函数
-		$mod->$act();
+		$cst_ctl=new cst_ctl();
+		$mod_ctl=new $mod_nme();
+		$mod_ctl->$act($req_prm);
 	}
 
 	/*
@@ -94,7 +96,7 @@ class cre{
 	public function url_dec($uri){
 		//处理uri
 		$flag=true;
-		$arr=explode('/',$uri);
+		$arr=explode('/',$uri.'/');
 		foreach ($arr as $k => $v) {//从起始标识以后开始获取数据
 			if($v==URL_SAT && $flag){
 				$flag=false;
@@ -112,7 +114,6 @@ class cre{
 			}
 		}
 		$arr=array_values($arr);
-		var_dump($arr);
 		return $arr;
 	}
 
@@ -133,7 +134,7 @@ class cre{
 	/*
 	*加载指定路径的类文件并实例化对象
 	*/
-	public function cls($cls,$pth,$fle){
+	private function cls($cls,$pth,$fle){
 		if(!is_file($pth.$fle)){
 			return false;
 		}
@@ -171,6 +172,14 @@ class cre{
 		else{
 			exit('code:2,can\'t load data model');
 		}
+	}
+
+	private function lod_cnf(){
+		require $_SERVER["DOCUMENT_ROOT"].'/cnf/cnf.php';
+	}
+
+	private function lod_fnc(){
+		require ROOT.'inc/fnc.php';
 	}
 }
 ?>

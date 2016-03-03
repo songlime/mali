@@ -18,7 +18,7 @@ class usr_ctl extends ctl{
 
 	//注册
 	public function reg(){
-		var_dump($this->usr);
+		var_dump(LIB_PTH);
 	}
 
 	//登陆

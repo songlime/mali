@@ -14,8 +14,8 @@ class dft_ctl extends ctl{
 		echo 'index';
 	}
 
-	public function reg(){
-		echo 'reg';
+	public function reg($prm){
+		var_dump($prm);
 	}
 }
 

@@ -23,7 +23,7 @@ class mdl extends cre{
 
 	//根据id获取单条数据
 	public function get_one_id($id){
-
+		
 	}
 
 	//根据条件获取单条数据

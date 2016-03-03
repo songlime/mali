@@ -40,5 +40,4 @@ $db = array(
 	'db'  => 'db',
 	'prefix' => 'ml',
 );
-
 ?>

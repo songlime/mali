@@ -15,12 +15,18 @@
 计数cnt count
 动作act action
 通用cmn common
+内容content cnt
+---------------------------------------
+页面page pge
+文件file fle
+内存memory mem
+缓存cache cch
+路径pth path 
 ---------------------------------------
 常用目录缩写
 ctl control控制器用于接受请求,加载所需类,构造对象,调用方法
 ser class 业务逻辑类文件 业务模型的抽象类,调用数据库或其他数据,实现业务逻辑,返回所需数据.
 mdl modle 数据模型类文件
-
 cnf config配置文件
 cre core核心
 doc document文档
@@ -32,9 +38,6 @@ mod 模块
 act 操作
 tpl template页面模板
 index.php  入口文件
-=======================================
-fle file 文件
-pth path 路径
 =======================================
 文件路径命名约定
 目录后须自带路径分隔符 '/'

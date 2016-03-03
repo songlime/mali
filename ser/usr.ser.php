@@ -8,7 +8,7 @@ class usr_ser extends ser{
 	private $name;
 	
 	public function __construct(){
-		echo 'index/cst/construct';
+		echo 'usr_ser/__construct';
 	}
 
 	public function __destruct(){
