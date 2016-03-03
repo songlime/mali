@@ -8,7 +8,8 @@ class usr_ser extends ser{
 	private $name;
 	
 	public function __construct(){
-		echo 'usr_ser/__construct';
+		$usr_mdl=$this->new_mdl('usr');
+		var_dump($usr_mdl);
 	}
 
 	public function __destruct(){
@@ -17,7 +18,7 @@ class usr_ser extends ser{
 
 	//注册
 	public function reg(){
-		
+		echo 'usr_ser->reg | ';
 	}
 
 	//登陆

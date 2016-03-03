@@ -149,9 +149,9 @@ class cre{
 	*实例化一个业务逻辑类
 	*/
 	public function new_ser($ser_nme){
-		$ser_fle=$ser_nme.'.ser.php';
+		$fle=$ser_nme.'.ser.php';
 		$ser_nme.='_ser';
-		$ser=$this->cls($ser_nme,SER_PTH,$ser_fle);
+		$ser=$this->cls($ser_nme,SER_PTH,$fle);
 		if($ser)
 			return $ser;
 		else{
@@ -162,13 +162,12 @@ class cre{
 	/*
 	*实例化一个数据模型类
 	*/
-	public function new_mod($mod_nme){
-		$fle=$ser_nme.'.mod.php';
-		$mod_nme.='_mod';
-		$mod=$this->cls($mod_nme,SER_PTH,$fle);
-		return $this->cls($mod_nme.'.mod.php',MOD_PTH);
-		if($mod)
-			return $mod;
+	public function new_mdl($mdl_nme){
+		$fle=$mdl_nme.'.mdl.php';
+		$mdl_nme.='_mdl';
+		$mdl=$this->cls($mdl_nme,MDL_PTH,$fle);
+		if($mdl)
+			return $mdl;
 		else{
 			exit('code:2,can\'t load data model');
 		}
@@ -176,6 +175,11 @@ class cre{
 
 	private function lod_cnf(){
 		require $_SERVER["DOCUMENT_ROOT"].'/cnf/cnf.php';
+		if($db){
+			foreach ($db as $k => $v) {
+				define($k, $v);
+			}
+		}
 	}
 
 	private function lod_fnc(){

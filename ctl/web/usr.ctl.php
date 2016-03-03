@@ -9,6 +9,7 @@ class usr_ctl extends ctl{
 	private $nme;
 	
 	public function __construct(){
+		parent::__construct();
 		$this->usr=$this->new_ser('usr');
 	}
 
@@ -18,7 +19,7 @@ class usr_ctl extends ctl{
 
 	//注册
 	public function reg(){
-		var_dump(LIB_PTH);
+		$this->usr->reg();
 	}
 
 	//登陆

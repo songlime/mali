@@ -17,9 +17,9 @@ define ('TPL_ROT', 'tpl/');
 
 define('CTL_PTH', ROOT.'ctl/');
 define('SER_PTH', ROOT.'ser/');
-define('MOD_PTH', 'mod/');
-define('INC_PTH', 'inc/');
-define('LIB_PTH', 'lib/');
+define('MDL_PTH', ROOT.'mdl/');
+define('INC_PTH', ROOT.'inc/');
+define('LIB_PTH', ROOT.'lib/');
 
 //URL模式 URL_Scheme URL_START URL_TAIL
 //1:http://www.a.com/index/list/1/2/3  
@@ -33,11 +33,11 @@ define('URL_TAL', '.html,.htm,.xml');
 
 //数据库配置
 $db = array(
-	'usr' => 'root', 
-	'psw' => 'root', 
-	'hst' => '127.0.0.1', 
-	'prt' => '3306', 
-	'db'  => 'db',
-	'prefix' => 'ml',
+	'DB_USR' => 'root', 
+	'DB_PSW' => 'root', 
+	'DB_HST' => '127.0.0.1', 
+	'DB_PRT' => '3306', 
+	'DB_DB'  => 'db',
+	'DB_PREFIX' => 'ml',
 );
 ?>

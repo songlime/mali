@@ -5,11 +5,13 @@
 class mdl extends cre{
 	private $nme;
 	public $tab_nme;
-
+	private $dbo;
 	/**
 	*构造方法
 	*/
-	public function __construct($tab_nme){
+	public function __construct(){
+		require ROOT.'inc/dbo/dbo.php';
+		$this->dbo=new dbo();
 		$this->tab_nme=$tab_nme;
 	}
 

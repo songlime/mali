@@ -3,7 +3,7 @@ class usr_mdl extends mdl{
 	private $name;
 	
 	public function __construct(){
-		
+		parent::__construct();
 	}
 
 	public function __destruct(){
