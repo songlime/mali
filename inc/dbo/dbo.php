@@ -12,8 +12,8 @@ class dbo{
     private $bulletin = true; //是否开启错误记录
     private $show_error = false; //测试阶段，显示所有错误,具有安全隐患,默认关闭
     private $is_error = false; //发现错误是否立即终止,默认true,建议不启用，因为当有问题时用户什么也看不到是很苦恼的
-    //$db_host, $db_user, $db_pwd, $db_database, $conn, $coding
-	public function __construct(){
+
+	public function __construct($db_host, $db_user, $db_pwd, $db_database, $conn='', $coding='utf-8'){
         $this->db_host = $db_host;
         $this->db_user = $db_user;
         $this->db_pwd = $db_pwd;

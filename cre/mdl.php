@@ -11,15 +11,14 @@ class mdl extends cre{
 	*/
 	public function __construct(){
 		require ROOT.'inc/dbo/dbo.php';
-		$this->dbo=new dbo();
-		$this->tab_nme=$tab_nme;
+		$this->dbo=new dbo(DB_HST, DB_USR, DB_PSW, DB_DB);
 	}
 
 	public function __destruct(){
 
 	}
 
-	public function get_mod_nme(){
+	public function get_mdl_nme(){
 		return $this->tab_nme;
 	}
 

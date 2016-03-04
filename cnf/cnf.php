@@ -34,7 +34,7 @@ define('URL_TAL', '.html,.htm,.xml');
 //数据库配置
 $db = array(
 	'DB_USR' => 'root', 
-	'DB_PSW' => 'root', 
+	'DB_PSW' => '', 
 	'DB_HST' => '127.0.0.1', 
 	'DB_PRT' => '3306', 
 	'DB_DB'  => 'db',

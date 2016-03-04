@@ -140,7 +140,7 @@ class cre{
 		}
 		else{
 			require $pth.$fle;
-			$obj=new $cls();
+			$obj=new $cls($cls);
 			return $obj;
 		}
 	}
