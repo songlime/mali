@@ -8,9 +8,9 @@ class cre{
 	public function __construct($uri,$cnf=''){
 		$this->lod_cnf();//加载配置文件
 		$this->lod_fnc();//加载通用方法
-		require ROOT.'/cre/ser.php';
-		require ROOT.'/cre/ctl.php';
-		require ROOT.'/cre/mdl.php';
+		require_once ROOT.'/cre/ser.php';
+		require_once ROOT.'/cre/ctl.php';
+		require_once ROOT.'/cre/mdl.php';
 		$this->uri=$uri;
 		l($uri);
 	}
@@ -133,20 +133,22 @@ class cre{
 
 	/*
 	*加载指定路径的类文件并实例化对象
+	*$cls类名
+	*$pth路径
+	*$fle文件名
 	*/
-	private function cls($cls,$pth,$fle){
+	private function cls($cls,$pth,$fle,$prm=''){
 		if(!is_file($pth.$fle)){
 			return false;
 		}
 		else{
-			require $pth.$fle;
-			$obj=new $cls($cls);
+			require_once $pth.$fle;
+			$obj=new $cls($prm);
 			return $obj;
 		}
 	}
 
-	/*
-	*实例化一个业务逻辑类
+	/*实例化一个业务逻辑类
 	*/
 	public function new_ser($ser_nme){
 		$fle=$ser_nme.'.ser.php';
@@ -159,13 +161,16 @@ class cre{
 		}
 	}
 
-	/*
-	*实例化一个数据模型类
+	/*实例化一个数据模型类
 	*/
 	public function new_mdl($mdl_nme){
 		$fle=$mdl_nme.'.mdl.php';
+		$mdl=$mdl_nme;
 		$mdl_nme.='_mdl';
-		$mdl=$this->cls($mdl_nme,MDL_PTH,$fle);
+		if(is_file(MDL_PTH.$fle))
+			$mdl=$this->cls($mdl_nme,MDL_PTH,$fle,$mdl);
+		else
+			$mdl=new mdl($mdl);
 		if($mdl)
 			return $mdl;
 		else{
@@ -173,8 +178,10 @@ class cre{
 		}
 	}
 
+	/*加载配置
+	*/
 	private function lod_cnf(){
-		require $_SERVER["DOCUMENT_ROOT"].'/cnf/cnf.php';
+		require_once $_SERVER["DOCUMENT_ROOT"].'/cnf/cnf.php';
 		if($db){
 			foreach ($db as $k => $v) {
 				define($k, $v);
@@ -183,7 +190,7 @@ class cre{
 	}
 
 	private function lod_fnc(){
-		require ROOT.'inc/fnc.php';
+		require_once ROOT.'inc/fnc.php';
 	}
 }
 ?>

@@ -10,6 +10,9 @@ class usr_ser extends ser{
 	public function __construct(){
 		$usr_mdl=$this->new_mdl('usr');
 		var_dump($usr_mdl);
+
+		$usr_mdl=$this->new_mdl('account');
+		var_dump($usr_mdl);
 	}
 
 	public function __destruct(){

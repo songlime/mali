@@ -3,15 +3,18 @@
 *数据模型类
 */
 class mdl extends cre{
-	private $nme;
-	public $tab_nme;
+	public $tab;
 	private $dbo;
 	/**
 	*构造方法
 	*/
-	public function __construct(){
-		require ROOT.'inc/dbo/dbo.php';
+	public function __construct($tab_nme=''){
+		require_once ROOT.'inc/dbo/dbo.php';
 		$this->dbo=new dbo(DB_HST, DB_USR, DB_PSW, DB_DB);
+		if($tab_nme)
+			$this->tab=$tab_nme;
+		else
+			$this->tab='';
 	}
 
 	public function __destruct(){
@@ -19,7 +22,7 @@ class mdl extends cre{
 	}
 
 	public function get_mdl_nme(){
-		return $this->tab_nme;
+		return $this->tab;
 	}
 
 	//根据id获取单条数据

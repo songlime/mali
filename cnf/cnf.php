@@ -37,7 +37,7 @@ $db = array(
 	'DB_PSW' => '', 
 	'DB_HST' => '127.0.0.1', 
 	'DB_PRT' => '3306', 
-	'DB_DB'  => 'db',
+	'DB_DB'  => 'mali',
 	'DB_PREFIX' => 'ml',
 );
 ?>
