@@ -21,6 +21,10 @@ class mdl extends cre{
 
 	}
 
+	public function shw_tab(){
+		$this->dbo->show_databases();
+	}
+
 	public function get_mdl_nme(){
 		return $this->tab;
 	}

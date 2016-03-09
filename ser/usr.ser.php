@@ -6,13 +6,10 @@
 */
 class usr_ser extends ser{
 	private $name;
-	
+	private $usr_mdl,$act_mdl;
 	public function __construct(){
-		$usr_mdl=$this->new_mdl('usr');
-		var_dump($usr_mdl);
-
-		$usr_mdl=$this->new_mdl('account');
-		var_dump($usr_mdl);
+		$this->usr_mdl=$this->new_mdl('usr');
+		$this->act_mdl=$this->new_mdl('account');
 	}
 
 	public function __destruct(){
@@ -21,7 +18,10 @@ class usr_ser extends ser{
 
 	//注册
 	public function reg(){
-		echo 'usr_ser->reg | ';
+		echo '$this->usr_mdl';
+		var_dump($this->usr_mdl);
+		echo '$this->act_mdl';
+		var_dump($this->act_mdl);
 	}
 
 	//登陆
@@ -29,14 +29,14 @@ class usr_ser extends ser{
 
 	}
 
-	//获取指定用户信息
-	public function get_usr_inf(){
-
+	//获取指定用户信息,根据uid
+	public function get_usr_inf($uid){
+		// $this->usr_mdl->get_usr();
 	}
 
 	//列出所有用户
-	public function  usr_lst(){
-
+	public function  usr_lst($pge=1,$ppg=20){
+		$this->usr_mdl->shw_tab();
 	}
 
 }

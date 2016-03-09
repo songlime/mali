@@ -24,7 +24,7 @@ class usr_ctl extends ctl{
 
 	//登陆
 	public function log(){
-		
+		$this->usr->usr_lst();
 	}
 
 	//获取指定用户信息
