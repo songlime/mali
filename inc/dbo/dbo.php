@@ -13,11 +13,12 @@ class dbo{
     private $show_error = false; //测试阶段，显示所有错误,具有安全隐患,默认关闭
     private $is_error = false; //发现错误是否立即终止,默认true,建议不启用，因为当有问题时用户什么也看不到是很苦恼的
 
-	public function __construct($db_host, $db_user, $db_pwd, $db_database, $conn='', $coding='utf-8'){
+	public function __construct($db_host, $db_user, $db_pwd, $db_database,$db_table, $conn='', $coding='utf-8'){
         $this->db_host = $db_host;
         $this->db_user = $db_user;
         $this->db_pwd = $db_pwd;
         $this->db_database = $db_database;
+        $this->db_table=$db_table;
         $this->conn = $conn;
         $this->coding = $coding;
         $this->cnn();
@@ -43,8 +44,12 @@ class dbo{
 	    mysql_query("SET NAMES $this->coding");
     }
 
-    public function get_one($id){
-        $sql="";
+    public function get_one($id,$column='id'){
+        $sql="SELECT * from {$this->db_table} WHERE uid=$id";
+        echo $sql;
+        $rst=$this->query($sql);
+        var_dump($rst);
+        return $rst;
     }
 
     public function query($sql) {
@@ -83,8 +88,9 @@ class dbo{
     public function fetch_array($resultt="") {
         if($resultt<>""){
             return mysql_fetch_array($resultt);
-        }else{
-        return mysql_fetch_array($this->result);
+        }
+        else{
+            return mysql_fetch_array($this->result);
         }
     }
 

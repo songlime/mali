@@ -10,8 +10,7 @@ class usr_mdl extends mdl{
 		
 	}
 
-	public function get_one(){
-		
+	public function get_one($id){
 	}
 
 	public function edit(){

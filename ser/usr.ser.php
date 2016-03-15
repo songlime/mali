@@ -8,7 +8,7 @@ class usr_ser extends ser{
 	private $name;
 	private $usr_mdl,$act_mdl;
 	public function __construct(){
-		$this->usr_mdl=$this->new_mdl('usr');
+		$this->usr_mdl=$this->new_mdl('user');
 		$this->act_mdl=$this->new_mdl('account');
 	}
 
@@ -31,7 +31,7 @@ class usr_ser extends ser{
 
 	//获取指定用户信息,根据uid
 	public function get_usr_inf($uid){
-		// $this->usr_mdl->get_usr();
+		$this->usr_mdl->get_one_id($uid);
 	}
 
 	//列出所有用户
