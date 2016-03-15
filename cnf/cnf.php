@@ -6,7 +6,7 @@
 域名配置
 	网站域名 图片前缀,规则
 */
-error_reporting();
+error_reporting(7);
 //定义自描述参数
 //用于文件层面定位
 define ('ROOT', $_SERVER["DOCUMENT_ROOT"].'/'); 

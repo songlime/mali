@@ -24,12 +24,13 @@ class usr_ctl extends ctl{
 
 	//登陆
 	public function log(){
-		
+		$this->usr->usr_lst();
 	}
 
 	//获取指定用户信息
-	public function get_usr_inf(){
-
+	public function inf($id){
+		$usr_inf=$this->usr->get_usr_inf(1);
+		var_dump($usr_inf);
 	}
 
 	//列出所有用户
