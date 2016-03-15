@@ -40,7 +40,7 @@ class mdl extends cre{
 
 	}
 
-	//插入单挑数据
+	//插入单条数据
 	public function ist_dat($arr){
 		
 	}
