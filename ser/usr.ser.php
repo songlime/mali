@@ -18,10 +18,6 @@ class usr_ser extends ser{
 
 	//注册
 	public function reg(){
-		echo '$this->usr_mdl';
-		var_dump($this->usr_mdl);
-		echo '$this->act_mdl';
-		var_dump($this->act_mdl);
 	}
 
 	//登陆
@@ -31,11 +27,18 @@ class usr_ser extends ser{
 
 	//获取指定用户信息,根据uid
 	public function get_usr_inf($uid){
-		$this->usr_mdl->get_one_id($uid);
+		$arr=array(
+			'fields' =>"uid,nickname,sex,avatar", 
+			'where' => 'uid='.$uid, 
+			'order' => 'uid DESC', 
+			'group' => '', 
+		);
+		$ret=$this->usr_mdl->get_row_cnd($arr);
+		return ($ret)?$ret:false;
 	}
 
 	//列出所有用户
-	public function  usr_lst($pge=1,$ppg=20){
+	public function  usr_lst($pge=1,$ppg=20,$cond=array()){
 		$this->usr_mdl->shw_tab();
 	}
 
