@@ -74,6 +74,8 @@ class mdl extends cre{
             $sql.=" ORDER BY $order";
         if($group)
             $sql.=" GROUP BY $group";
+        if($limit)
+        	$sql.=" LIMIT $limit";
 
         return $sql.';';
     }
