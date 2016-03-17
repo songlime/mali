@@ -28,8 +28,14 @@ class usr_ctl extends ctl{
 	}
 
 	//获取指定用户信息
-	public function inf($id){
-		$usr_inf=$this->usr->get_usr_inf(1);
+	public function inf($id=''){
+		if(!$id){
+			echo 'error';
+			return false;
+		}
+		else
+			$id=$id[0];
+		$usr_inf=$this->usr->get_usr_inf($id);
 		var_dump($usr_inf);
 	}
 

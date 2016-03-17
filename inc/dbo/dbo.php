@@ -4,6 +4,7 @@ class dbo{
     private $db_user; //数据库用户名
     private $db_pwd; //数据库用户名密码
     private $db_database; //数据库名
+    private $db_table; //数据表名
     private $conn; //数据库连接标识;
     private $result; //执行query命令的结果资源标识
     private $sql; //sql执行语句
@@ -44,14 +45,7 @@ class dbo{
 	    mysql_query("SET NAMES $this->coding");
     }
 
-    public function get_one($id,$column='id'){
-        $sql="SELECT * from {$this->db_table} WHERE uid=$id";
-        echo $sql;
-        $rst=$this->query($sql);
-        var_dump($rst);
-        return $rst;
-    }
-
+    //执行sql语句
     public function query($sql) {
         if ($sql == "") {
             $this->show_error("SQL语句错误：", "SQL查询语句为空");
@@ -60,7 +54,6 @@ class dbo{
         $result = mysql_query($this->sql, $this->conn);
 
         if (!$result) {
-            //调试中使用，sql语句出错时会自动打印出来
             if ($this->show_error) {
                 $this->show_error("错误SQL语句：", $this->sql);
             }

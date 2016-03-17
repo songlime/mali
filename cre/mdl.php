@@ -29,26 +29,66 @@ class mdl extends cre{
 		return $this->tab;
 	}
 
-	//根据id获取单条数据
-	public function get_one_id($id){
-		if(!$id)
-			return -1;
-		return $this->dbo->get_one($id);
-	}
+	//获取一个单元格
+    public function get_cel_cnd(){
+		$sql=$this->get_sql($cnd,$ech);
+		$rs=$this->dbo->query($sql);
+		$data=$this->fetch_array($rs,1);
+		$dat=array_values($data[0]);
+		return ($dat[0])?$dat[0]:false;
+    }
 
 	//根据条件获取单条数据
-	public function get_one_cnd($id){
-
+	public function get_row_cnd($cnd,$ech=false){
+		$sql=$this->get_sql($cnd,$ech);
+		$rs=$this->dbo->query($sql);
+		$data=$this->fetch_array($rs);
+		return ($data[0])?$data[0]:false;
 	}
 
 	//根据条件获取多条数据
 	public function get_dat_cnd($cnd){
-
+		$sql=$this->get_sql($cnd,$ech);
+		$rs=$this->dbo->query($sql);
+		$data=$this->fetch_array($rs);
+		return ($data)?$data:false;
 	}
 
 	//插入单条数据
 	public function ist_dat($arr){
 		
 	}
+
+	//从资源提取内容数据,组装成数组
+    public function fetch_array($rs,$type=0){
+        if($rs){
+        	while ($dat=mysql_fetch_assoc($rs)) {
+        		$arr[]=$dat;
+        	}
+        	return $arr;
+        }
+        else{
+            return false;
+        }
+    }
+
+    /*根据数组构造sql*/
+    public function get_sql($cnd,$ech=false){
+        if(!is_array($cnd))
+            return -1;
+        extract($cnd);
+        $sql="SELECT {$top} {$fields} FROM {$this->tab}";
+        if($where)
+            $sql.=" WHERE $where";
+        if($order)
+            $sql.=" ORDER BY $order";
+        if($group)
+            $sql.=" GROUP BY $group";
+        if($limit)
+        	$sql.=" LIMIT $limit";
+        if($ech)echo $sql;
+        return $sql.';';
+    }
+
 }
 ?>
