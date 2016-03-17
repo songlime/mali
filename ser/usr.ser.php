@@ -18,6 +18,11 @@ class usr_ser extends ser{
 
 	//注册
 	public function reg(){
+		$usr_nme=trim($_POST['username']);
+		$pwd=$_POST['password'];
+		if(strlen($usr_nme)){
+			echo strlen($usr_nme);
+		}
 	}
 
 	//登陆
@@ -28,10 +33,11 @@ class usr_ser extends ser{
 	//获取指定用户信息,根据uid
 	public function get_usr_inf($uid){
 		$arr=array(
-			'fields' =>"uid,nickname,sex,avatar", 
-			'where' => 'uid='.$uid, 
-			'order' => 'uid DESC', 
+			'fields' =>"id,nickname,sex,avatar", 
+			'where' => 'id='.$uid, 
+			'order' => 'id DESC', 
 			'group' => '', 
+			'limit' => '1'
 		);
 		$ret=$this->usr_mdl->get_row_cnd($arr);
 		return ($ret)?$ret:false;
