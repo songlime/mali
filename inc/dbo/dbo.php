@@ -5,8 +5,8 @@ class dbo{
     private $db_pwd; //数据库用户名密码
     private $db_database; //数据库名
     private $db_table; //数据表名
-    private $conn; //数据库连接标识;
-    private $result; //执行query命令的结果资源标识
+    public $conn; //数据库连接标识;
+    public $result; //执行query命令的结果资源标识
     private $sql; //sql执行语句
     private $row; //返回的条目数
     private $coding; //数据库编码，GBK,UTF8,gb2312
@@ -52,7 +52,6 @@ class dbo{
         }
         $this->sql = $sql;
         $result = mysql_query($this->sql, $this->conn);
-
         if (!$result) {
             if ($this->show_error) {
                 $this->show_error("错误SQL语句：", $this->sql);

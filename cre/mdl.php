@@ -56,12 +56,21 @@ class mdl extends cre{
 
 	//插入单条数据
 	public function ins_dat($arr){
-		
+		if(!$arr)return false;
+		$sql=$this->get_ins_sql($arr);
+		$ret=$this->dbo->query($sql);
+		$id=mysql_insert_id($this->dbo->conn);
+		if($id)
+			return $id;
+		elseif($ret)
+			return $ret;
+		else
+			return false;
 	}
 
 	//编辑一条数据
 	public function upd_dat($arr,$cnd){
-
+		if(!$arr)return false;
 	}
 
 
@@ -77,14 +86,22 @@ class mdl extends cre{
             return false;
         }
     }
-    public get_ins_sql($dat){
+
+    public function get_ins_sql($dat){
     	if (!is_array($dat)) {
    			return false;
     	}
-    	$sql="INSERT INTO {$this->tab}";
+    	foreach ($dat as $k => $v) {
+    		$fields.=','.$k;
+    		$values.=',\''.$v.'\'';
+    	}
+    	$fields=substr($fields,1);
+    	$values=substr($values,1);
+    	$sql="INSERT INTO {$this->tab} ($fields) VALUES ($values) ;";
+    	return $sql;
     }
 
-    public get_upd_sql($dat){
+    public function get_upd_sql($dat){
     	if (!is_array($dat)) {
    			
     	}

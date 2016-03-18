@@ -9,7 +9,7 @@ class usr_ser extends ser{
 	private $usr_mdl,$act_mdl;
 	public function __construct(){
 		$this->usr_mdl=$this->new_mdl('user');
-		$this->act_mdl=$this->new_mdl('account');
+		$this->acn_mdl=$this->new_mdl('account');
 	}
 
 	public function __destruct(){
@@ -18,11 +18,15 @@ class usr_ser extends ser{
 
 	//注册
 	public function reg(){
-		$usr_nme=trim($_POST['username']);
-		$pwd=$_POST['password'];
-		if(strlen($usr_nme)){
-			echo strlen($usr_nme);
-		}
+		$arr=array(
+			'username'=>'abenaben',
+			'password'=>'2ben',
+			'mobile'=>'15656562323',
+			'email'=>'a@sina.com',
+			'reg_date' =>time(),
+		);
+		$ret=$this->acn_mdl->ins_dat($arr);
+		var_dump($ret);
 	}
 
 	//登陆
