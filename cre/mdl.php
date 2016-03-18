@@ -55,9 +55,24 @@ class mdl extends cre{
 	}
 
 	//插入单条数据
-	public function ist_dat($arr){
-		
+	public function ins_dat($arr){
+		if(!$arr)return false;
+		$sql=$this->get_ins_sql($arr);
+		$ret=$this->dbo->query($sql);
+		$id=mysql_insert_id($this->dbo->conn);
+		if($id)
+			return $id;
+		elseif($ret)
+			return $ret;
+		else
+			return false;
 	}
+
+	//编辑一条数据
+	public function upd_dat($arr,$cnd){
+		if(!$arr)return false;
+	}
+
 
 	//从资源提取内容数据,组装成数组
     public function fetch_array($rs,$type=0){
@@ -72,12 +87,31 @@ class mdl extends cre{
         }
     }
 
-    /*根据数组构造sql*/
+    public function get_ins_sql($dat){
+    	if (!is_array($dat)) {
+   			return false;
+    	}
+    	foreach ($dat as $k => $v) {
+    		$fields.=','.$k;
+    		$values.=',\''.$v.'\'';
+    	}
+    	$fields=substr($fields,1);
+    	$values=substr($values,1);
+    	$sql="INSERT INTO {$this->tab} ($fields) VALUES ($values) ;";
+    	return $sql;
+    }
+
+    public function get_upd_sql($dat){
+    	if (!is_array($dat)) {
+   			
+    	}
+    }
+    /*根据数组构造查询sql*/
     public function get_sql($cnd,$ech=false){
         if(!is_array($cnd))
             return -1;
         extract($cnd);
-        $sql="SELECT {$top} {$fields} FROM {$this->tab}";
+        $sql="SELECT {$fields} FROM {$this->tab}";
         if($where)
             $sql.=" WHERE $where";
         if($order)
