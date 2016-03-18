@@ -36,7 +36,12 @@ class usr_ctl extends ctl{
 		else
 			$id=$id[0];
 		$usr_inf=$this->usr->get_usr_inf($id);
-		var_dump($usr_inf);
+		if(!$usr_inf){
+			echo "id is not exist";
+		}
+		else{
+			var_dump($usr_inf);
+		}
 	}
 
 	//列出所有用户

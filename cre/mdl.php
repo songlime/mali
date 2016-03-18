@@ -55,9 +55,15 @@ class mdl extends cre{
 	}
 
 	//插入单条数据
-	public function ist_dat($arr){
+	public function ins_dat($arr){
 		
 	}
+
+	//编辑一条数据
+	public function upd_dat($arr,$cnd){
+
+	}
+
 
 	//从资源提取内容数据,组装成数组
     public function fetch_array($rs,$type=0){
@@ -71,13 +77,24 @@ class mdl extends cre{
             return false;
         }
     }
+    public get_ins_sql($dat){
+    	if (!is_array($dat)) {
+   			return false;
+    	}
+    	$sql="INSERT INTO {$this->tab}";
+    }
 
-    /*根据数组构造sql*/
+    public get_upd_sql($dat){
+    	if (!is_array($dat)) {
+   			
+    	}
+    }
+    /*根据数组构造查询sql*/
     public function get_sql($cnd,$ech=false){
         if(!is_array($cnd))
             return -1;
         extract($cnd);
-        $sql="SELECT {$top} {$fields} FROM {$this->tab}";
+        $sql="SELECT {$fields} FROM {$this->tab}";
         if($where)
             $sql.=" WHERE $where";
         if($order)
