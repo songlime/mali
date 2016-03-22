@@ -78,7 +78,7 @@ class dbo{
 
     /*取得记录集,获取数组-索引和关联,使用$row['content'] */
     public function fetch_array($resultt="") {
-        if($resultt<>""){
+        if($resultt!=""){
             return mysql_fetch_array($resultt);
         }
         else{
