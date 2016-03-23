@@ -26,7 +26,7 @@ class usr_ser extends ser{
 			'reg_date' =>time(),
 		);
 		$ret=$this->acn_mdl->ins_dat($arr);
-		var_dump($ret);
+		return $ret;
 	}
 
 	//登陆
@@ -47,9 +47,20 @@ class usr_ser extends ser{
 		return ($ret)?$ret:false;
 	}
 
+	public function upd_usr_inf(){
+		$arr=array(
+			'username' =>"upd", 
+			'mobile'=>'15656235689',
+			'email'=>'up@date.com',
+		);
+		$cnd="id=10";
+		$ret=$this->acn_mdl->upd_dat($arr,$cnd);
+		return ($ret)?$ret:false;
+	}
 	//列出所有用户
-	public function  usr_lst($pge=1,$ppg=20,$cond=array()){
-		$this->usr_mdl->shw_tab();
+	public function  usr_lst($cnd=array(),$pge=1,$ppg=20){
+		$ret=$this->acn_mdl->get_dat_pge(array());
+		var_dump($ret);
 	}
 
 }
