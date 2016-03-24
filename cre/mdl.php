@@ -54,12 +54,29 @@ class mdl extends cre{
 		return ($data)?$data:false;
 	}
 
+	//根据指定条件获取数据数目
+	public function get_dat_cnt($cnd){
+		$cnd['fields']=' count(*) as cnt ';
+		$sql=$this->get_sql($cnd);
+		$rs=$this->dbo->query($sql);
+		$data=$this->fetch_array($rs,1);
+		$dat=array_values($data[0]);
+		return ($dat[0])?$dat[0]:false;
+	}
+
 	public function get_dat_pge($cnd,$pge=1,$ppg=20){
-		$cnd_pgs=$cnd;
-		$cnd_pgs['fields']=' count(*) as cnt ';
-		$cnt=$this->get_cel_cnd($cnd_pgs);
-		var_dump($cnd_pgs);
-		var_dump($res);
+		$cnt=(int)$this->get_dat_cnt($cnd);
+		$pgs=(int)ceil($cnt/$ppg);
+		if($pge<=0)$pge=1;
+		if($pge>$pgs)$pge=$pgs;
+		if($ppg<=0)$ppg=20;
+		$stt=(int)($pge-1)*$ppg;
+		$cnd['limit']=" $stt,$ppg ";
+		$sql=$this->get_sql($cnd);
+		$rs=$this->dbo->query($sql);
+		$dat=$this->fetch_array($rs);
+		$dat[]=array('cnt'=>$cnt, 'pge'=>$pge, 'ppg'=>$ppg, 'pgs'=>$pgs, );
+		return ($dat)?$dat:false;
 	}
 
 	//插入单条数据
@@ -68,12 +85,9 @@ class mdl extends cre{
 		$sql=$this->get_ins_sql($arr);
 		$ret=$this->dbo->query($sql);
 		$id=mysql_insert_id($this->dbo->conn);
-		if($id)
-			return $id;
-		elseif($ret)
-			return $ret;
-		else
-			return false;
+		if($id)return $id;
+		elseif($ret)return $ret;
+		else return false;
 	}
 
 	//编辑一条数据
@@ -81,12 +95,10 @@ class mdl extends cre{
 		if(!$arr)return false;
 		$sql=$this->get_upd_sql($arr,$cnd);
 		$ret=$this->dbo->query($sql);
-		if($aff=mysql_affected_rows($this->dbo->conn))
+		if($aff=mysql_affected_rows($this->dbo->conn)) 
 			return $aff;
-		elseif($ret)
-			return $ret;
-		else
-			return false;
+		elseif($ret) return $ret;
+		else return false;
 	}
 
 
@@ -129,6 +141,7 @@ class mdl extends cre{
         if(!is_array($cnd))
             return -1;
         extract($cnd);
+        if(!$fields)$fields="*";
         $sql="SELECT {$fields} FROM {$this->tab}";
         if($where)
             $sql.=" WHERE $where";
