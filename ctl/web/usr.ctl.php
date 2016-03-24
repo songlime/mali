@@ -51,7 +51,8 @@ class usr_ctl extends ctl{
 
 	//列出所有用户
 	public function  lst(){
-		$upd=$this->usr->usr_lst($id);
+		$usr_lst=$this->usr->usr_lst($id);
+		var_dump($usr_lst);
 	}
 
 }

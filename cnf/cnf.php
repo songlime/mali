@@ -13,8 +13,7 @@ define ('ROOT', $_SERVER["DOCUMENT_ROOT"].'/');
 //用于服务器层面定位
 define ('DOMAIN', $_SERVER['HTTP_HOST'].'/');
 //定于模板文件路路径
-define ('TPL_ROT', 'tpl/');
-
+define('TPL_PTH', ROOT.'tpl/');
 define('CTL_PTH', ROOT.'ctl/');
 define('SER_PTH', ROOT.'ser/');
 define('MDL_PTH', ROOT.'mdl/');
