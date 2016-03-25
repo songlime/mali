@@ -35,6 +35,6 @@ function dcd_url($uri,$url_cnf){
 
 //构造URL
 function ecd_url(){
-
 }
+
 ?>

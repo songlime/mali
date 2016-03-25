@@ -64,15 +64,15 @@ class mdl extends cre{
 		return ($dat[0])?$dat[0]:false;
 	}
 
-	public function get_dat_pge($cnd,$pge=1,$ppg=20){
-		$cnt=(int)$this->get_dat_cnt($cnd);
+	public function get_dat_pge($where,$pge=1,$ppg=20){
+		$cnt=(int)$this->get_dat_cnt($where);
 		$pgs=(int)ceil($cnt/$ppg);
 		if($pge<=0)$pge=1;
 		if($pge>$pgs)$pge=$pgs;
 		if($ppg<=0)$ppg=20;
 		$stt=(int)($pge-1)*$ppg;
-		$cnd['limit']=" $stt,$ppg ";
-		$sql=$this->get_sql($cnd);
+		$where['limit']=" $stt,$ppg ";
+		$sql=$this->get_sql($where);
 		$rs=$this->dbo->query($sql);
 		$dat=$this->fetch_array($rs);
 		$dat[]=array('cnt'=>$cnt, 'pge'=>$pge, 'ppg'=>$ppg, 'pgs'=>$pgs, );
@@ -91,9 +91,10 @@ class mdl extends cre{
 	}
 
 	//编辑一条数据
-	public function upd_dat($arr,$cnd){
+	public function upd_dat($arr,$where){
 		if(!$arr)return false;
-		$sql=$this->get_upd_sql($arr,$cnd);
+        if(is_array($where))$where=implode(' AND ', $where);
+		$sql=$this->get_upd_sql($arr,$where);
 		$ret=$this->dbo->query($sql);
 		if($aff=mysql_affected_rows($this->dbo->conn)) 
 			return $aff;
@@ -141,6 +142,7 @@ class mdl extends cre{
         if(!is_array($cnd))
             return -1;
         extract($cnd);
+        if(is_array($where))$where=implode(' AND ', $where);
         if(!$fields)$fields="*";
         $sql="SELECT {$fields} FROM {$this->tab}";
         if($where)

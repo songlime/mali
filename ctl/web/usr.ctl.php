@@ -11,6 +11,7 @@ class usr_ctl extends ctl{
 	public function __construct(){
 		parent::__construct();
 		$this->usr=$this->new_ser('usr');
+		$this->smt = new Smarty;
 	}
 
 	public function __destruct(){
@@ -50,8 +51,10 @@ class usr_ctl extends ctl{
 	}
 
 	//列出所有用户
-	public function  lst(){
-		$usr_lst=$this->usr->usr_lst($id);
+	public function  lst($pam){
+		$pge=$pam[0];
+		$ppg=$pam[1];
+		$usr_lst=$this->usr->usr_lst(array(),$pge,$ppg);
 		var_dump($usr_lst);
 	}
 

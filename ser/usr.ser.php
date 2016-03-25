@@ -58,8 +58,8 @@ class usr_ser extends ser{
 		return ($ret)?$ret:false;
 	}
 	//列出所有用户
-	public function  usr_lst($cnd=array(),$pge=1,$ppg=36){
-		$dat=$this->acn_mdl->get_dat_pge(array());
+	public function  usr_lst($cnd=array(),$pge=1,$ppg=20){
+		$dat=$this->acn_mdl->get_dat_pge(array(),$pge,$ppg);
 		return $dat;
 	}
 
