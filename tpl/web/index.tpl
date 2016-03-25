@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html charset="utf-8">
 <head>
-<title>title{$title}</title>
+<title>{$title}adf张三</title>
 <meta />
 </head>
 <body>

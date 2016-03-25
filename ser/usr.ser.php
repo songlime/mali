@@ -17,12 +17,12 @@ class usr_ser extends ser{
 	}
 
 	//注册
-	public function reg(){
+	public function reg($pam){
+		$nme=$pam['nme'];
+		$pwd=$pam['pwd'];
 		$arr=array(
-			'username'=>'abenaben',
-			'password'=>'2ben',
-			'mobile'=>'15656562323',
-			'email'=>'a@sina.com',
+			'username'=>$nme,
+			'password'=>$pwd,
 			'reg_date' =>time(),
 		);
 		$ret=$this->acn_mdl->ins_dat($arr);
@@ -58,8 +58,8 @@ class usr_ser extends ser{
 		return ($ret)?$ret:false;
 	}
 	//列出所有用户
-	public function  usr_lst($cnd=array(),$pge=1,$ppg=36){
-		$dat=$this->acn_mdl->get_dat_pge(array());
+	public function  usr_lst($cnd=array(),$pge=1,$ppg=20){
+		$dat=$this->acn_mdl->get_dat_pge(array(),$pge,$ppg);
 		return $dat;
 	}
 

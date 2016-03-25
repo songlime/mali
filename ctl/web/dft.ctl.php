@@ -12,12 +12,13 @@ class dft_ctl extends ctl{
 	}
 
 	public function index(){
-		$this->smt->assign('title','The smarty title');
-		$this->smt->display(TPL_PTH.'/web/index.tpl');
+		$this->smt->assign('title','The smarty title testing');
+		$this->smt->display(TPL_PTH.'web/index.tpl');
 	}
 
 	public function reg($prm){
-		var_dump($prm);
+		$this->smt->assign('title','注册');
+		$this->smt->display(TPL_PTH.'web/reg.tpl');
 	}
 }
 
