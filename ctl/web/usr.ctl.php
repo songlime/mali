@@ -58,5 +58,37 @@ class usr_ctl extends ctl{
 		var_dump($usr_lst);
 	}
 
+	//生成验证码,用图片返回并放入SESSION
+	public function getcde($prm){
+		$chr_lst="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+		$chr_lst="ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+		$im=imagecreate(100, 100);
+		$bg = imagecolorallocate($im, 255, 255, 255);
+		$black = imagecolorallocate($im, 0, 0, 0);
+		for($i=0;$i<4;$i++){
+			$n=rand(0,36);
+			imagechar($im, 4, $i*20+$n/3, $n/5,$chr_lst[$n], $black);
+			$cde.=$chr_lst[$n];
+		}
+		$_SESSION['code']=$cde;
+		header('Content-type: image/png');
+		imagepng($im);
+	}
+
+	public function chkcde(){
+
+	}
+
+	//生成随机数字,放入SESSION并发送短信
+	public function getmsg(){
+		$msg=(string)rand(1000000,9999999);
+		$msg=substr($msg, 1);
+		$_SESSION['msg']=$msg;
+		print_r($_SESSION);
+	}
+
+	public function chkmsg(){
+		
+	}
 }
 ?>

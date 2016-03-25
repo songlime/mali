@@ -20,11 +20,6 @@ class dft_ctl extends ctl{
 		$this->smt->assign('title','注册');
 		$this->smt->display(TPL_PTH.'web/reg.tpl');
 	}
-
-	public function getcode($prm){
-		$_SESSION['code']="ABCD";
-		print_r($_SESSION);
-	}
 }
 
 ?>
