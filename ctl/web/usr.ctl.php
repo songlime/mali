@@ -60,14 +60,19 @@ class usr_ctl extends ctl{
 
 	//生成验证码,用图片返回并放入SESSION
 	public function getcde($prm){
-		$chr_lst="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-		$chr_lst="ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-		$im=imagecreate(100, 100);
-		$bg = imagecolorallocate($im, 255, 255, 255);
+		$chr_lst="1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+		$im=imagecreate(100, 150);
+		$fnt=ROOT.'inc/fnt/iOS8.ttf';
+		$white = imagecolorallocate($im, 255, 255, 255);
 		$black = imagecolorallocate($im, 0, 0, 0);
+		$style = array($black,$white,$white );
+		imagesetstyle($im, $style);
 		for($i=0;$i<4;$i++){
-			$n=rand(0,36);
-			imagechar($im, 4, $i*20+$n/3, $n/5,$chr_lst[$n], $black);
+			$n=rand(0,35);
+			$x=rand(6,10);
+			$y=rand(24,30);
+			$a=rand(-30,-10);
+			imagettftext($im, 20, $a, $i*16+$x, $y, $black, $fnt, $chr_lst[$n]);
 			$cde.=$chr_lst[$n];
 		}
 		$_SESSION['code']=$cde;
