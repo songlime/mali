@@ -19,8 +19,10 @@ class usr_ctl extends ctl{
 	}
 
 	//注册
-	public function reg(){
-		$this->usr->reg();
+	public function reg($arr){
+		$nme=$_POST['username'];
+		$pwd=$_POST['password'];
+		$this->usr->reg($arr = array($nme,$pwd ));
 	}
 
 	//登陆
