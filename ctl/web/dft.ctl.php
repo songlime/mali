@@ -1,4 +1,9 @@
 <?php
+/*
+*默认操作
+*未指定ctl时执行该类中的相关方法
+*date 2016-02-18
+*/
 class dft_ctl extends ctl{
 	private $param;
 	private $smt;

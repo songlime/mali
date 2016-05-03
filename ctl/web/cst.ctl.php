@@ -1,5 +1,10 @@
 <?php
-class cst_ctl extends ser{
+/*
+*基础控制器类
+*每一个类加载前加载本类
+*date 2016-02-18
+*/
+class cst_ctl extends ctl{
 	private $name;
 	public function __construct(){
 		parent::__construct();
