@@ -61,7 +61,7 @@ class usr_ctl extends ctl{
 	}
 
 	//生成验证码,用图片返回并放入SESSION
-	public function getcde($prm){
+	public function get_cde($prm){
 		$chr_lst="1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 		$im=imagecreate(100, 150);
 		$fnt=ROOT.'inc/fnt/iOS8.ttf';
@@ -82,19 +82,19 @@ class usr_ctl extends ctl{
 		imagepng($im);
 	}
 
-	public function chkcde(){
+	public function chk_cde(){
 
 	}
 
 	//生成随机数字,放入SESSION并发送短信
-	public function getmsg(){
+	public function get_msg(){
 		$msg=(string)rand(1000000,9999999);
 		$msg=substr($msg, 1);
 		$_SESSION['msg']=$msg;
 		print_r($_SESSION);
 	}
 
-	public function chkmsg(){
+	public function chk_msg(){
 		
 	}
 }
