@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-05-13 08:13:09
-  from "D:\wamp\wamp\www\mali\tpl\web\reg.tpl" */
+/* Smarty version 3.1.29, created on 2016-05-13 08:16:42
+  from "D:\wamp\wamp\www\mali\tpl\web\log.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_57358c95ba86d4_02439987',
+  'unifunc' => 'content_57358d6aa48878_21299498',
   'file_dependency' => 
   array (
-    '7ec1671eda484f1d048c055873c71aae471c9a6d' => 
+    '78d08180dfaf87fca28fb1dccfca440732a009fb' => 
     array (
-      0 => 'D:\\wamp\\wamp\\www\\mali\\tpl\\web\\reg.tpl',
-      1 => 1463127183,
+      0 => 'D:\\wamp\\wamp\\www\\mali\\tpl\\web\\log.tpl',
+      1 => 1463127366,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_57358c95ba86d4_02439987 ($_smarty_tpl) {
+function content_57358d6aa48878_21299498 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -36,12 +36,9 @@ function content_57358c95ba86d4_02439987 ($_smarty_tpl) {
 	</head>
 	<body>
 		<div>
-			<form action="/usr/register" method="POST">
+			<form action="/usr/login" method="POST">
 				<label>用户名<input type="text" placeholder="请输入用户名" class="" id="" name="username" /></label>
-				<label>手机号<input type="text" placeholder="请输入手机号" class="" id="" name="mobile" /></label>
-				<input type="button" id="getcode" value="获取验证码" />
 				<label>密码<input type="text" placeholder="请输入密码" class="" id="" name="password" /></label>
-				<label>重复密码<input type="text" placeholder="请再次输入密码" class="" id="" name="password_repeat" /></label>
 				<input type="submit" value="确认" />
 			</form>
 		</div>

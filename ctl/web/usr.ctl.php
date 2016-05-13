@@ -18,16 +18,56 @@ class usr_ctl extends ctl{
 		
 	}
 
-	//注册
-	public function reg($arr){
-		$nme=$_POST['username'];
-		$pwd=$_POST['password'];
-		$this->usr->reg($arr = array($nme,$pwd ));
+	//注册页面
+	public function reg(){
+		$this->smt->assign('title','注册');
+		$this->smt->display(TPL_PTH.'web/reg.tpl');
 	}
 
-	//登陆
+	//注册,注册成功跳转到登陆页面,注册失败跳转到注册页面
+	public function register(){
+		$reg_dat= array(
+			'une'=>$_POST['username'],
+			'mbl'=>$_POST['mobile'],
+			'pwd'=>$_POST['password'],
+			'pwd_rep'=>$_POST['password_repeat'],
+		);
+		$ret=$this->usr->reg($reg_dat);
+		if($ret>0){
+			header('location:/log');
+		}
+		else{
+			switch ($ret) {
+				default:
+					echo 'error'.$ret;
+					exit('this page will jump to /reg');
+					break;
+			}
+			//注册失败,继续
+			header('location:/reg');
+		}
+
+	}
+
+	//登陆页面
 	public function log(){
 		$this->usr->usr_lst();
+	}
+
+	//验证用户信息，通过跳转到指定页面，失败跳转登陆页面
+	public function login(){
+		if($inf){
+			//登陆成功跳转到指定页面
+			$this->smt->display(TPL_PTH.'web/reg.tpl');
+		}
+		else{
+			//登陆失败,重新登陆
+		}
+	}
+
+	//鉴定用户身份.
+	public function chk(){
+
 	}
 
 	//获取指定用户信息

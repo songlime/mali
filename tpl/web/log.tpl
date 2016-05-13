@@ -8,12 +8,9 @@
 	</head>
 	<body>
 		<div>
-			<form action="/usr/register" method="POST">
+			<form action="/usr/login" method="POST">
 				<label>用户名<input type="text" placeholder="请输入用户名" class="" id="" name="username" /></label>
-				<label>手机号<input type="text" placeholder="请输入手机号" class="" id="" name="mobile" /></label>
-				<input type="button" id="getcode" value="获取验证码" />
 				<label>密码<input type="text" placeholder="请输入密码" class="" id="" name="password" /></label>
-				<label>重复密码<input type="text" placeholder="请再次输入密码" class="" id="" name="password_repeat" /></label>
 				<input type="submit" value="确认" />
 			</form>
 		</div>

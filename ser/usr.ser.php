@@ -9,7 +9,7 @@ class usr_ser extends ser{
 	private $usr_mdl,$act_mdl;
 	public function __construct(){
 		$this->usr_mdl=$this->new_mdl('user');
-		$this->acn_mdl=$this->new_mdl('account');
+		$this->act_mdl=$this->new_mdl('account');
 	}
 
 	public function __destruct(){
@@ -18,20 +18,55 @@ class usr_ser extends ser{
 
 	//注册
 	public function reg($pam){
-		$nme=$pam['nme'];
+		$nme=$pam['une'];
+		$mbl=trim($pam['mbl']);
 		$pwd=$pam['pwd'];
+		$pwd_rep=$pam['pwd_rep'];
+		if($pwd!=$pwd_rep) //验证密码两次是否一致
+			return -1;
+		// if(!$nme)// 验证用户名格式
+		// 	return -2;
+		if (!preg_match('/^1[3-9]\d{9}$/', $mbl)) // 验证手机号
+			return -3;
+		if(!$pwd)//验证密码格式
+			return -4;
 		$arr=array(
 			'username'=>$nme,
+			'mobile'=>$mbl,
 			'password'=>$pwd,
-			'reg_date' =>time(),
+			'reg_date' =>date("Y-m-d H:i:s",time()) ,
 		);
-		$ret=$this->acn_mdl->ins_dat($arr);
+		$ret=$this->act_mdl->ins_dat($arr);
 		return $ret;
 	}
 
 	//登陆
 	public function log(){
 
+	}
+
+	//鉴定用户身份 $jmp是否跳转到登陆页面
+	public function chk($jmp=0){
+		$uid=(int)$_SESSION['uid'];
+		if($uid<0){
+			if($jmp===0)
+				header('location:'.'/log');
+			else
+				return false;
+		}
+		$usr_inf=$this->get_usr_inf($uid);
+		if(!$usr_inf){
+			if($jmp===0)
+				header('location:'.'/log');
+			else
+				return false;
+		}
+		else{
+			if($jmp===0)
+				header('location:'.'/log');
+			else
+				return false;
+		}
 	}
 
 	//获取指定用户信息,根据uid
@@ -54,12 +89,12 @@ class usr_ser extends ser{
 			'email'=>'up@date.com',
 		);
 		$cnd="id=10";
-		$ret=$this->acn_mdl->upd_dat($arr,$cnd);
+		$ret=$this->act_mdl->upd_dat($arr,$cnd);
 		return ($ret)?$ret:false;
 	}
 	//列出所有用户
 	public function  usr_lst($cnd=array(),$pge=1,$ppg=20){
-		$dat=$this->acn_mdl->get_dat_pge(array(),$pge,$ppg);
+		$dat=$this->act_mdl->get_dat_pge(array(),$pge,$ppg);
 		return $dat;
 	}
 

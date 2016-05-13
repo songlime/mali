@@ -25,6 +25,11 @@ class dft_ctl extends ctl{
 		$this->smt->assign('title','注册');
 		$this->smt->display(TPL_PTH.'web/reg.tpl');
 	}
+
+	public function log($prm){
+		$this->smt->assign('title','登陆');
+		$this->smt->display(TPL_PTH.'web/log.tpl');
+	}
 }
 
 ?>
