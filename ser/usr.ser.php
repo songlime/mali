@@ -6,10 +6,10 @@
 */
 class usr_ser extends ser{
 	private $name;
-	private $usr_mdl,$act_mdl;
+	private $usr_mdl,$acu_mdl;
 	public function __construct(){
-		$this->usr_mdl=$this->new_mdl('user');
-		$this->act_mdl=$this->new_mdl('account');
+		$this->usr_mdl=$this->new_mdl('usr');
+		$this->acu_mdl=$this->new_mdl('acu');
 	}
 
 	public function __destruct(){
@@ -36,16 +36,42 @@ class usr_ser extends ser{
 			'password'=>$pwd,
 			'reg_date' =>date("Y-m-d H:i:s",time()) ,
 		);
-		$ret=$this->act_mdl->ins_dat($arr);
+		$ret=$this->acu_mdl->ins_dat($arr);
 		return $ret;
 	}
 
-	//登陆
-	public function log(){
+	//登陆-用户名/手机号/邮箱+密码
+	public function log($username,$password){
+		$ret=$this->acu_mdl->log($username,$password);
+		$usr_inf=array(
+			'uid'=>$ret['id'], 
+			'username' =>$ret['username'], 
+			'password' =>$ret['password'],
+			'mobile' =>$ret['mobile'] ,
+			'email' =>$ret['email'] ,
+			'weixin_id' =>$ret['weixin_id'] ,
+			'weibo_id' =>$ret['weibo_id']  ,
+			'qq_id' =>$ret['qq_id'] ,
+			'reg_date' =>$ret['reg_date'],
+			'las_date' =>$ret['las_date'] ,		
+		);
+		return $usr_inf?$usr_inf:false;
+	}
+
+	//登陆-手机号+验证码
+	public function log_mobile($mobile,$code){
 
 	}
 
-	//鉴定用户身份 $jmp是否跳转到登陆页面
+	//登陆-微信登陆
+	public function log_weixin($weixin_id){
+
+	}
+
+	//登陆-微博登陆
+	public function log_weibo($weibo_id){
+	}
+	//鉴定当前会话用户身份 $jmp是否跳转到登陆页面
 	public function chk($jmp=0){
 		$uid=(int)$_SESSION['uid'];
 		if($uid<0){
@@ -89,12 +115,12 @@ class usr_ser extends ser{
 			'email'=>'up@date.com',
 		);
 		$cnd="id=10";
-		$ret=$this->act_mdl->upd_dat($arr,$cnd);
+		$ret=$this->acu_mdl->upd_dat($arr,$cnd);
 		return ($ret)?$ret:false;
 	}
 	//列出所有用户
 	public function  usr_lst($cnd=array(),$pge=1,$ppg=20){
-		$dat=$this->act_mdl->get_dat_pge(array(),$pge,$ppg);
+		$dat=$this->acu_mdl->get_dat_pge(array(),$pge,$ppg);
 		return $dat;
 	}
 

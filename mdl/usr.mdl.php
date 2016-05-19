@@ -1,9 +1,8 @@
 <?php
 class usr_mdl extends mdl{
-	public $tab;
-	public function __construct($tab_nme){
-		parent::__construct($tab_nme);
-		$this->tab=$tab_nme;
+	public $tab='usr';
+	public function __construct($tab){
+		parent::__construct($tab);
 	}
 
 	public function __destruct(){

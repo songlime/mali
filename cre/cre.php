@@ -12,6 +12,7 @@ class cre{
 		require_once ROOT.'/cre/ctl.php';
 		require_once ROOT.'/cre/mdl.php';
 		$this->uri=$uri;
+		error_reporting(7);
 		l($uri);
 	}
 
@@ -38,7 +39,7 @@ class cre{
 		$req_arr=$req_prm=array();
 		$flg=$mod=NULL;
 		$i=0;
-		while (current($arr)){
+		while ($i++<3 || current($arr)){
 			$v=current($arr);
 			// 项目名
 			if(!isset($req_arr['pjt'])){
@@ -114,6 +115,7 @@ class cre{
 			}
 		}
 		$arr=array_values($arr);
+		$arr=array_pad($arr, 3, '');
 		return $arr;
 	}
 

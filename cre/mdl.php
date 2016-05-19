@@ -41,6 +41,7 @@ class mdl extends cre{
 	//根据条件获取单条数据
 	public function get_row_cnd($cnd,$ech=false){
 		$sql=$this->get_sql($cnd);
+		if($ech)echo $sql;
 		$rs=$this->dbo->query($sql);
 		$data=$this->fetch_array($rs);
 		return ($data[0])?$data[0]:false;
@@ -65,6 +66,8 @@ class mdl extends cre{
 	}
 
 	public function get_dat_pge($where,$pge=1,$ppg=20){
+		$pge=($pge)?$pge:1;
+		$ppg=($ppg)?$ppg:20;
 		$cnt=(int)$this->get_dat_cnt($where);
 		$pgs=(int)ceil($cnt/$ppg);
 		if($pge<=0)$pge=1;

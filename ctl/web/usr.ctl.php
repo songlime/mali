@@ -18,6 +18,11 @@ class usr_ctl extends ctl{
 		
 	}
 
+	//
+	public function index(){
+		$this->log();
+	}
+
 	//注册页面
 	public function reg(){
 		$this->smt->assign('title','注册');
@@ -51,17 +56,24 @@ class usr_ctl extends ctl{
 
 	//登陆页面
 	public function log(){
-		$this->usr->usr_lst();
+		var_dump('expression');
+		$this->smt->assign('title','登陆');
+		$this->smt->display(TPL_PTH.'web/log.tpl');
 	}
 
 	//验证用户信息，通过跳转到指定页面，失败跳转登陆页面
-	public function login(){
-		if($inf){
+	public function login($parm){
+		$username=$_POST['username'];
+		$password=$_POST['password'];
+		$inf=$this->usr->log($username,$password);
+		if($inf['uid']){
 			//登陆成功跳转到指定页面
-			$this->smt->display(TPL_PTH.'web/reg.tpl');
+			$this->smt->assign('account_inf',$inf);
+			$this->smt->assign('title','login登陆成功');
+			$this->smt->display(TPL_PTH.'web/index.tpl');
 		}
 		else{
-			//登陆失败,重新登陆
+			echo "login fail";
 		}
 	}
 
@@ -94,8 +106,8 @@ class usr_ctl extends ctl{
 
 	//列出所有用户
 	public function  lst($pam){
-		$pge=$pam[0];
-		$ppg=$pam[1];
+		$pge=$pam[0]?$pam[0]:1;
+		$ppg=$pam[1]?$pam[1]:20;
 		$usr_lst=$this->usr->usr_lst(array(),$pge,$ppg);
 		var_dump($usr_lst);
 	}
