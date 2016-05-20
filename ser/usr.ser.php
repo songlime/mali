@@ -95,6 +95,11 @@ class usr_ser extends ser{
 		}
 	}
 
+	//
+	public function get_acn_inf($uid){
+		
+	}
+
 	//获取指定用户信息,根据uid
 	public function get_usr_inf($uid){
 		$arr=array(
