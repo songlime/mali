@@ -24,7 +24,7 @@ function l($cnt,$log_fle=''){
 	$log_pth=date('Y/m/d/');
 	$l=fopen($log_pth.$log_fle, 'a');
 	flock($l, 2);
-	fwrite($l, 'l:>'.$cnt."\r\n");
+	fwrite($l, 'l:>'.date('H:i:s').'-'.$cnt."\r\n");
 	flock($l, 3);
 	fclose($l);
 }

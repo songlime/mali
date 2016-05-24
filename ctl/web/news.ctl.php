@@ -11,6 +11,7 @@ class news_ctl extends ctl{
 		parent::__construct();
 		$this->news=$this->new_ser('news');
 		$this->smt = new Smarty;
+		$this->smt->compile_dir=TPL_PTH.'temp_c';
 	}
 
 	public function __destruct(){
