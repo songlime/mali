@@ -17,8 +17,9 @@ class dft_ctl extends ctl{
 	}
 
 	public function index(){
-		$this->smt->assign('title','The smarty title testing');
+		$this->smt->assign('title','index - ');
 		$this->smt->display(TPL_PTH.'web/index.tpl');
+		echo 'index';
 	}
 
 	public function reg($prm){
@@ -27,6 +28,7 @@ class dft_ctl extends ctl{
 	}
 
 	public function log($prm){
+		print_r($_GET);
 		$this->smt->assign('title','登陆');
 		$this->smt->display(TPL_PTH.'web/log.tpl');
 	}

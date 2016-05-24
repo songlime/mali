@@ -6,6 +6,7 @@
 	<meta />
 </head>
 <body>
-<div>{$account_inf|@var_dump}</div>
+<div></div>
+这是一个汉字
 </body>
 </html>

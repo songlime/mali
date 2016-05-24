@@ -43,7 +43,7 @@ class cre{
 			$v=current($arr);
 			// 项目名
 			if(!isset($req_arr['pjt'])){
-				if(is_dir($ctl_pth.$v)){
+				if($v && is_dir($ctl_pth.$v)){
 					$req_arr['pjt']=$v;
 					next($arr);
 				}
@@ -66,7 +66,7 @@ class cre{
 			}
 			//操作名
 			elseif(!isset($req_arr['act'])){
-				if(method_exists($mod_nme,$v)){
+				if($v && method_exists($mod_nme,$v)){
 					$req_arr['act']=$v;
 					next($arr);
 				}

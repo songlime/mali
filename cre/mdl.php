@@ -65,24 +65,26 @@ class mdl extends cre{
 		return ($dat[0])?$dat[0]:false;
 	}
 
-	public function get_dat_pge($where,$pge=1,$ppg=20){
+	//获取一页数据 
+	public function get_dat_pge($cnd='',$pge=1,$ppg=20){
 		$pge=($pge)?$pge:1;
 		$ppg=($ppg)?$ppg:20;
-		$cnt=(int)$this->get_dat_cnt($where);
+		$cnt=(int)$this->get_dat_cnt($cnd);
 		$pgs=(int)ceil($cnt/$ppg);
 		if($pge<=0)$pge=1;
 		if($pge>$pgs)$pge=$pgs;
 		if($ppg<=0)$ppg=20;
 		$stt=(int)($pge-1)*$ppg;
-		$where['limit']=" $stt,$ppg ";
-		$sql=$this->get_sql($where);
+		$cnd['limit']=" $stt,$ppg ";
+		$sql=$this->get_sql($cnd);
 		$rs=$this->dbo->query($sql);
+		$a=mysql_fetch_row($rs);
 		$dat=$this->fetch_array($rs);
 		$dat[]=array('cnt'=>$cnt, 'pge'=>$pge, 'ppg'=>$ppg, 'pgs'=>$pgs, );
 		return ($dat)?$dat:false;
 	}
 
-	//插入单条数据
+	//插入单条数据 //TODO 防注入过滤
 	public function ins_dat($arr){
 		if(!$arr)return false;
 		$sql=$this->get_ins_sql($arr);
@@ -93,7 +95,7 @@ class mdl extends cre{
 		else return false;
 	}
 
-	//编辑一条数据
+	//编辑一条数据 //TODO 防注入过滤
 	public function upd_dat($arr,$where){
 		if(!$arr)return false;
         if(is_array($where))$where=implode(' AND ', $where);
@@ -108,22 +110,17 @@ class mdl extends cre{
 
 	//从资源提取内容数据,组装成数组
     public function fetch_array($rs,$type=0){
-        if($rs){
-        	while ($dat=mysql_fetch_assoc($rs)) {
+        if($rs)
+        	while ($dat=mysql_fetch_assoc($rs))
         		$arr[]=$dat;
-        	}
-        	return $arr;
-        }
-        else{
-            return false;
-        }
+        return $arr?$arr:false;
     }
 
     public function get_ins_sql($dat){
     	if (!is_array($dat))return false;
     	foreach ($dat as $k => $v) {
     		$fields.=','.$k;
-    		$values.=',\''.$v.'\'';
+    		$values.=',\''.addslashes($v).'\'';
     	}
     	$fields=substr($fields,1);
     	$values=substr($values,1);
@@ -131,15 +128,16 @@ class mdl extends cre{
     	return $sql;
     }
 
-    public function get_upd_sql($dat,$cnd){
+    public function get_upd_sql($dat,$where){
     	if (!is_array($dat))return false;
     	foreach ($dat as $k => $v) {
     		$upd.=",$k='$v' ";
     	}
     	$upd=substr($upd, 1);
-    	$sql="UPDATE {$this->tab} SET $upd WHERE $cnd ;";
+    	$sql="UPDATE {$this->tab} SET $upd WHERE $where ;";
     	return $sql;
     }
+
     /*根据数组构造查询sql*/
     public function get_sql($cnd){
         if(!is_array($cnd))
@@ -158,6 +156,5 @@ class mdl extends cre{
         	$sql.=" LIMIT $limit";
         return $sql.';';
     }
-
 }
 ?>

@@ -68,12 +68,12 @@ class usr_ctl extends ctl{
 		$inf=$this->usr->log($username,$password);
 		if($inf['uid']){
 			//登陆成功跳转到指定页面
-			$this->smt->assign('account_inf',$inf);
-			$this->smt->assign('title','login登陆成功');
-			$this->smt->display(TPL_PTH.'web/index.tpl');
+			setcookie('login_success','login success page');
+			header('location:/index');
 		}
 		else{
-			echo "login fail";
+			setcookie('login_fail','login fail reason');
+			header('location:/log?fail=fail');
 		}
 	}
 

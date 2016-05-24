@@ -10,9 +10,11 @@ class acu_mdl extends mdl{
 	}
 
 	public function log($username,$password){
+		$username=addslashes($username);
+		$password=addslashes($password);
 		$where=array("username='$username'","password='$password'");
 		$cnd=array('where'=>$where,'limit'=>1);
-		$acu_inf=$this->get_row_cnd($cnd);
+		$acu_inf=$this->get_row_cnd($cnd,true);
 		return $acu_inf;
 	}
 
