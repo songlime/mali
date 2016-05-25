@@ -25,15 +25,10 @@ class nws_mdl extends mdl{
 		
 	}
 
-	// public function get_dat_pge(){
-	// 	echo 'qq';
-	// }
-
+	//获取一条新闻的内容
 	public function get_one($id){
-	}
-
-	public function edit(){
-
+		$cnd=array(	'where'=>"id=$id",);
+		return $this->get_row_cnd($cnd);
 	}
 }
 ?>

@@ -10,6 +10,7 @@ class news_ser extends ser{
 	public function __construct(){
 		$this->usr_mdl=$this->new_mdl('usr');
 		$this->nws_mdl=$this->new_mdl('nws');
+		$this->nws_cmt_mdl=$this->new_mdl('nws_cmt');
 
 	}
 
@@ -23,9 +24,18 @@ class news_ser extends ser{
 	}
 
 	//列出所有用户
-	public function  usr_lst($cnd=array(),$pge=1,$ppg=20){
-		$dat=$this->acu_mdl->get_dat_pge(array(),$pge,$ppg);
-		return $dat;
+	public function  get_detail($nid){
+		$nws_dtl=$this->nws_mdl->get_one($nid);
+		$nws_dtl['date']=date('Y-m-d H:i:s',$nws_dtl['date']);
+		$nws_dtl['date_mdf']=date('Y-m-d H:i:s',$nws_dtl['date_mdf']);
+		//获取新闻评论第一页
+		$nws_cmt=$this->nws_cmt_mdl->get_nws_cmt($nid);
+		var_dump($nws_cmt);
+		return $nws_dtl;
+	}
+
+	public function get_nws_cmt($nid,$pge,$ppg){
+		
 	}
 
 }

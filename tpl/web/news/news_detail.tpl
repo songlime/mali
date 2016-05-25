@@ -6,6 +6,6 @@
 	<meta />
 </head>
 <body>
-<div>{$account_inf|@var_dump}</div>
+<div>{$nws_dtf|@var_dump}</div>
 </body>
 </html>

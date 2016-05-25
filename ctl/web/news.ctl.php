@@ -32,8 +32,11 @@ class news_ctl extends ctl{
 	}
 
 	public function detail($prm){
-		var_dump($prm);
-		$this->smt->assign('title','news-detail page ');
+		$nid=(int)$prm[0];
+		$nws_dtl=$this->news->get_detail($nid);
+		$title=mb_substr($nws_dtl['title'], 0,16,'utf-8');
+		$this->smt->assign('title',$title);
+		$this->smt->assign('nws_dtf',$nws_dtl);
 		$this->smt->display(TPL_PTH.'web/news/news_detail.tpl');
 		return true;
 	}

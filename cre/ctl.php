@@ -14,7 +14,8 @@ class ctl extends cre{
 	/*
 	*获取控制器名
 	*/
-	public function get_nme(){
+	public function get_nme($ech=false){
+		if($ech) echo __CLASS__;
 		return __CLASS__;
 	}
 
