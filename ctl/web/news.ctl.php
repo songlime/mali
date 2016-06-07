@@ -12,6 +12,12 @@ class news_ctl extends ctl{
 		$this->news=$this->new_ser('news');
 		$this->smt = new Smarty;
 		$this->smt->compile_dir=TPL_PTH.'temp_c';
+		$this->smt->template_dir = TPL_PTH;
+		$this->smt->config_dir = TPL_PTH.'cfg/';
+		// $this->smt->cache_dir = '/web/www.mydomain.com/smarty/guestbook/cache/'; 
+		
+		$this->caching = true;
+
 	}
 
 	public function __destruct(){
@@ -26,9 +32,20 @@ class news_ctl extends ctl{
 			$index=$this->news->get_index();
 			$this->smt->assign('title','news-index-');
 			$this->smt->display(TPL_PTH.'web/news/news_index.tpl');
-			print_r($index);
+			var_dump($index);
 		}
+	}
 
+	//获取新闻分类列表
+	public function lists($prm){
+		header("content-type:text/html; charset=utf-8");
+		var_dump($prm);
+		$cid=$prm[0];
+		$pge=$prm[1];
+		$ppg=$prm[2];
+		$nws_lst=$this->news->get_lst($cid,$pge,$ppg);
+		print_r($nws_lst);
+		return ture;
 	}
 
 	public function detail($prm){

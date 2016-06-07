@@ -39,7 +39,7 @@ class cre{
 		$req_arr=$req_prm=array();
 		$flg=$mod=NULL;
 		$i=0;
-		while ($i++<3 || current($arr)){
+		while ($i++<3 || (current($arr))!='' ){
 			$v=current($arr);
 			// 项目名
 			if(!isset($req_arr['pjt'])){

@@ -56,9 +56,10 @@ class mdl extends cre{
 	}
 
 	//根据指定条件获取数据数目
-	public function get_dat_cnt($cnd){
+	public function get_dat_cnt($cnd,$ech=false){
 		$cnd['fields']=' count(*) as cnt ';
 		$sql=$this->get_sql($cnd);
+		if($ech) echo $sql;
 		$rs=$this->dbo->query($sql);
 		$data=$this->fetch_array($rs,1);
 		$dat=array_values($data[0]);
@@ -66,7 +67,7 @@ class mdl extends cre{
 	}
 
 	//获取一页数据 
-	public function get_dat_pge($cnd='',$pge=1,$ppg=20){
+	public function get_dat_pge($cnd='',$pge=1,$ppg=20,$ech=false){
 		$pge=($pge)?$pge:1;
 		$ppg=($ppg)?$ppg:20;
 		$cnt=(int)$this->get_dat_cnt($cnd);
@@ -77,6 +78,7 @@ class mdl extends cre{
 		$stt=(int)($pge-1)*$ppg;
 		$cnd['limit']=" $stt,$ppg ";
 		$sql=$this->get_sql($cnd);
+		if($ech) echo 'sql:',$sql;
 		$rs=$this->dbo->query($sql);
 		$a=mysql_fetch_row($rs);
 		$dat=$this->fetch_array($rs);

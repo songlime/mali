@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-05-25 07:15:21
+/* Smarty version 3.1.29, created on 2016-06-07 07:57:26
   from "D:\wamp\wamp\www\mali\tpl\web\news\news_detail.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5745510918a601_79035968',
+  'unifunc' => 'content_57567e6640bd23_97446763',
   'file_dependency' => 
   array (
     '737a286931fac8ad3fa2769491fefa3ca55ed13e' => 
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_5745510918a601_79035968 ($_smarty_tpl) {
+function content_57567e6640bd23_97446763 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
