@@ -27,7 +27,7 @@ class news_ser extends ser{
 	public function get_lst($cls_id=0,$pge=1,$ppg=20){
 		$pge=(!(int)$pge)?1:$pge;
 		$ppg=(!(int)$ppg)?20:$ppg;
-		return $this->nws_mdl->nws_lst($cls_id,$pge,$ppg,1);
+		return $this->nws_mdl->nws_lst($cls_id,$pge,$ppg);
 	}
 
 	//获取一条新闻的内容
@@ -42,7 +42,13 @@ class news_ser extends ser{
 	}
 
 	//获取新闻的评论,分页
-	public function get_nws_cmt($nid,$pge,$ppg){
+	public function get_nws_cmt($nid,$pge=1,$ppg=20){
+		$ret=$this->nws_cmt_mdl->get_nws_cmt($nid,$pge,$ppg);
+		return $ret;
+	}
+
+	//发表评论
+	public function cmt_nws($ndi,$uid,$cmt){
 		
 	}
 

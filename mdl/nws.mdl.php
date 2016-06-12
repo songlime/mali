@@ -27,7 +27,8 @@ class nws_mdl extends mdl{
 	public function nws_lst($cls_id,$pge,$ppg){ //分类,page,perpage
 		if($cls_id)$where="cid=$cls_id";
 		$cnd=array('fields'=>'id,title','where'=>$where);
-		return $this->get_dat_pge($cnd,$pge,$ppg);
+		$ret=$this->get_dat_pge($cnd,$pge,$ppg);
+		return $ret;
 	}
 
 	public function nws_lst_2($pst,$ppg){ //pst=page start起始id  perpage

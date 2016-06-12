@@ -39,12 +39,12 @@ class news_ctl extends ctl{
 	//获取新闻分类列表
 	public function lists($prm){
 		header("content-type:text/html; charset=utf-8");
-		var_dump($prm);
+		echo 'ctl.php-prms';var_dump($prm);
 		$cid=$prm[0];
 		$pge=$prm[1];
 		$ppg=$prm[2];
 		$nws_lst=$this->news->get_lst($cid,$pge,$ppg);
-		print_r($nws_lst);
+		var_dump($nws_lst);
 		return ture;
 	}
 
@@ -52,9 +52,21 @@ class news_ctl extends ctl{
 		$nid=(int)$prm[0];
 		$nws_dtl=$this->news->get_detail($nid);
 		$title=mb_substr($nws_dtl['title'], 0,16,'utf-8');
+		//news commits
+		$news_commit=$this->news->get_nws_cmt($nid,1);
 		$this->smt->assign('title',$title);
 		$this->smt->assign('nws_dtf',$nws_dtl);
 		$this->smt->display(TPL_PTH.'web/news/news_detail.tpl');
+		return true;
+	}
+
+	public function commit($prm){
+		$nid=$_POST['nid'];
+		$uid=$_SESSION['uid'];
+		$cmt=$_POST['commit'];
+		header("content-type:text/html; charset=utf-8");
+		$news_commit=$this->news->cmt_nws($nid,$uid,$cmt);
+
 		return true;
 	}
 

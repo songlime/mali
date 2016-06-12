@@ -10,9 +10,10 @@ class nws_cmt_mdl extends mdl{
 	}
 
 	//获取一条新闻的内容
-	public function get_nws_cmt($nid){
-		$cnd=array(	'where'=>"nid=$nid",);
-		return $this->get_row_cnd($cnd);
+	public function get_nws_cmt($nid,$pge=1,$ppg=20){
+		$cnd=array('fields'=>'*','where'=>"nid=$nid",);
+		$ret=$this->get_dat_pge($cnd,$pge,$ppg);
+		return $ret;
 	}
 }
 ?>

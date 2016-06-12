@@ -80,9 +80,9 @@ class mdl extends cre{
 		$sql=$this->get_sql($cnd);
 		if($ech) echo 'sql:',$sql;
 		$rs=$this->dbo->query($sql);
-		$a=mysql_fetch_row($rs);
 		$dat=$this->fetch_array($rs);
-		$dat[]=array('cnt'=>$cnt, 'pge'=>$pge, 'ppg'=>$ppg, 'pgs'=>$pgs, );
+		if($dat)
+			$dat[]=array('cnt'=>$cnt, 'pge'=>$pge, 'ppg'=>$ppg, 'pgs'=>$pgs, );
 		return ($dat)?$dat:false;
 	}
 
