@@ -87,9 +87,10 @@ class mdl extends cre{
 	}
 
 	//插入单条数据 //TODO 防注入过滤
-	public function ins_dat($arr){
+	public function ins_dat($arr,$ech=false){
 		if(!$arr)return false;
 		$sql=$this->get_ins_sql($arr);
+		if($ech) echo $sql;
 		$ret=$this->dbo->query($sql);
 		$id=mysql_insert_id($this->dbo->conn);
 		if($id)return $id;

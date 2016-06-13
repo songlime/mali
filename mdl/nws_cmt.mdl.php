@@ -15,5 +15,16 @@ class nws_cmt_mdl extends mdl{
 		$ret=$this->get_dat_pge($cnd,$pge,$ppg);
 		return $ret;
 	}
+
+	//发表评论
+	public function cmt_nws($nid,$uid,$cmt){
+		$dat=array(
+			'nid'=>$nid,
+			'uid'=>$uid,
+			'content'=>$cmt,
+			'date'=>time(),
+		);
+		return $this->ins_dat($dat);
+	}
 }
 ?>

@@ -48,8 +48,12 @@ class news_ser extends ser{
 	}
 
 	//发表评论
-	public function cmt_nws($ndi,$uid,$cmt){
-		
+	public function cmt_nws($nid,$uid,$cmt){
+		if((int)$nid<1) return -1;
+		if((int)$uid<1) return -2;
+		if(!$cmt) return -3;
+		$ret=$this->nws_cmt_mdl->cmt_nws($nid,$uid,$cmt);
+		return $ret;
 	}
 
 }

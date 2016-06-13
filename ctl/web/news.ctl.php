@@ -66,9 +66,17 @@ class news_ctl extends ctl{
 		$cmt=$_POST['commit'];
 		header("content-type:text/html; charset=utf-8");
 		$news_commit=$this->news->cmt_nws($nid,$uid,$cmt);
-
+		if($news_commit<0){
+			$err='';
+			switch ($news_commit) {
+				case -1: $err='新闻id为空';break;
+				case -2: $err='用户id为空';break; 
+				case -3:$err='评论内容id为空';break;
+				default:$err='数据有误';break;
+			}
+		}
+		if($err) echo $err;
 		return true;
-	}
-
+	} 
 }
 ?>
