@@ -5,8 +5,8 @@ class cre{
 	/*
 	*构造函数
 	*/
-	public function __construct($uri,$cnf=''){
-		$this->lod_cnf();//加载配置文件
+	public function __construct($uri,$cfg=''){
+		$this->lod_cfg();//加载配置文件
 		$this->lod_fnc();//加载通用方法
 		require_once ROOT.'/cre/ser.php';
 		require_once ROOT.'/cre/ctl.php';
@@ -182,8 +182,8 @@ class cre{
 
 	/*加载配置
 	*/
-	private function lod_cnf(){
-		require_once $_SERVER["DOCUMENT_ROOT"].'/cnf/cnf.php';
+	private function lod_cfg(){
+		require_once $_SERVER["DOCUMENT_ROOT"].'/cfg/cfg.php';
 		if($db){
 			foreach ($db as $k => $v) {
 				define($k, $v);

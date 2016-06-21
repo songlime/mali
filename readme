@@ -27,7 +27,7 @@
 ctl control控制器用于接受请求,加载所需类,构造对象,调用方法
 ser class 业务逻辑类文件 业务模型的抽象类,调用数据库或其他数据,实现业务逻辑,返回所需数据.
 mdl modle 数据模型类文件
-cnf config配置文件
+cfg config配置文件
 cre core核心
 doc document文档
 inc include第三方库组件

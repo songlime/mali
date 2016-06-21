@@ -30,7 +30,7 @@ function l($cnt,$log_fle=''){
 }
 
 //解析URL
-function dcd_url($uri,$url_cnf){
+function dcd_url($uri,$url_mod){
 }
 
 //构造URL

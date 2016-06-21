@@ -17,9 +17,8 @@ class dft_ctl extends ctl{
 	}
 
 	public function index(){
-		$this->smt->assign('title','index - ');
+		$this->smt->assign('inf','马力汽车');
 		$this->smt->display(TPL_PTH.'web/index.tpl');
-		echo 'index';
 	}
 
 	public function reg($prm){

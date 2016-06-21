@@ -13,8 +13,8 @@ http://www.net.com/project-son/module/act/param1/param2/param3
 
 /
 ├cls
-├cnf
-| ├cnf.php
+├cfg
+| ├cfg.php
 ├cre
   bsecls
   bsemod
