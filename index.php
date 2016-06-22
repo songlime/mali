@@ -5,7 +5,7 @@
 	加载核心文件
 	启动核心程序
 */
-require '/cre/cre.php';
+require './cre/cre.php';
 $cre=new cre($_SERVER['REQUEST_URI']);
 $cre->go();
 ?>

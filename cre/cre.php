@@ -29,60 +29,68 @@ class cre{
 	*/
 	public function go(){
 		$ctl_pth=CTL_PTH;
-
 		//解析URL返回数组
-		$arr=$this->uri_arr=$this->url_dec($this->uri);
 		//默认操作
-		if(!$arr)
-			$arr=array('pjt'=>'web','mod'=>'dft','act'=>'index',);
-		//解析arr并加载数据,执行操作
-		$req_arr=$req_prm=array();
-		$flg=$mod=NULL;
-		$i=0;
-		while ($i++<3 || (current($arr))!='' ){
-			$v=current($arr);
-			// 项目名
-			if(!isset($req_arr['pjt'])){
-				if($v && is_dir($ctl_pth.$v)){
-					$req_arr['pjt']=$v;
-					next($arr);
+		if(URL_SCM==2){
+			$req_arr=array(
+				'pjt'=>($_GET['pjt'])?$_GET['pjt']:'web',
+				'mod'=>($_GET['mod'])?$_GET['mod']:'dft',
+				'act'=>($_GET['act'])?$_GET['act']:'index',
+			);
+			require_once $ctl_pth.$req_arr['pjt'].'/'.'cst.ctl.php';
+			require_once $ctl_pth.$req_arr['pjt'].'/'.$req_arr['mod'].'.ctl.php';
+			$mod_nme=$req_arr['mod'].'_ctl';
+			$act=$req_arr['act'];
+		}
+		if(URL_SCM==1){
+			$arr=$this->uri_arr=$this->url_dec($this->uri);
+			//默认操作
+			if(!$arr)
+				$arr=array('pjt'=>'web','mod'=>'dft','act'=>'index',);
+			//解析arr并加载数据,执行操作
+			$req_arr=$req_prm=array();
+			$flg=$mod=NULL;
+			$i=0;
+			while ($i++<3 || current($arr)){
+				$v=current($arr);
+				// 项目名
+				if(!isset($req_arr['pjt'])){
+					if($v && is_dir($ctl_pth.$v)){
+						$req_arr['pjt']=$v;
+						next($arr);
+					}
+					else //默认项目
+						$req_arr['pjt']='web';
 				}
-				else //默认项目
-					$req_arr['pjt']='web';
-			}
-			//模块名
-			elseif(!isset($req_arr['mod'])){
-				if(is_file($ctl_pth.$req_arr['pjt'].'/'.$v.'.ctl.php')){
-					$req_arr['mod']=$v;
-					next($arr);
+				//模块名
+				elseif(!isset($req_arr['mod'])){
+					if(is_file($ctl_pth.$req_arr['pjt'].'/'.$v.'.ctl.php')){
+						$req_arr['mod']=$v;
+						next($arr);
+					}
+					else //默认类文件
+						$req_arr['mod']='dft';
+					//加载类文件
+					//处理默认类,执行预处理方法.
+					require_once $ctl_pth.$req_arr['pjt'].'/cst.ctl.php';
+					require_once $ctl_pth.$req_arr['pjt'].'/'.$req_arr['mod'].'.ctl.php';
+					$mod_nme=$req_arr['mod'].'_ctl';
 				}
-				else //默认类文件
-					$req_arr['mod']='dft';
-				//加载类文件
-				//处理默认类,执行预处理方法.
-				require_once $ctl_pth.$req_arr['pjt'].'/cst.ctl.php';
-				require_once $ctl_pth.$req_arr['pjt'].'/'.$req_arr['mod'].'.ctl.php';
-				$mod_nme=$req_arr['mod'].'_ctl';
-			}
-			//操作名
-			elseif(!isset($req_arr['act'])){
-				if($v && method_exists($mod_nme,$v)){
-					$req_arr['act']=$v;
-					next($arr);
+				//操作名
+				elseif(!isset($req_arr['act'])){
+					if($v && method_exists($mod_nme,$v)){
+						$req_arr['act']=$v;
+						next($arr);
+					}
+					else //默认方法
+						$req_arr['act']='index';
+					$act=$req_arr['act'];
 				}
-				else //默认方法
-					$req_arr['act']='index';
-				$act=$req_arr['act'];
-			}
-			//处理参数
-			else{
-				if(URL_SCM==1){//默认是1,不同的URL模式,构造和解析方式也不同.
+				//处理参数
+				else{
 					$req_prm[]=current($arr);
+					next($arr);
 				}
-				elseif(URL_SCM==2){
-					$req_prm[current($arr)]=next($arr);
-				}
-				next($arr);
 			}
 		}
 		//执行函数
