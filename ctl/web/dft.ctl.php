@@ -7,6 +7,7 @@
 class dft_ctl extends ctl{
 	private $param;
 	private $smt;
+	private $tpl_pth='tpl/web/';
 	public function __construct(){
 		parent::__construct();
 		$this->smt = new Smarty;

@@ -1,0 +1,242 @@
+﻿.title3_bg{
+	border-left:8px solid #00a1e9;
+	border-bottom:1px dotted #888;
+	padding-left:8px;
+	margin:12px 0px;
+	font:normal bold medium 微软雅黑,黑体,宋体;
+	}
+
+#location{
+	color:#808080;
+	}
+#location a{
+	font:normal normal 12px/16px 宋体;
+	color:#808080;
+	}
+#location a:hover{
+	color:#e42a2a;
+	text-decoration:underline;
+	}
+.news_con a{
+	width:500px;
+	}
+#calendar{
+	width:340px;
+	}
+#news_cont{
+	border-bottom:1px dotted #888;
+	padding-bottom:10px;
+	margin:0px auto 10px;
+	}
+#news_cont_title{
+	height:36px;
+	text-align:center;
+	vertical-align:middle;
+	border-bottom:1px dotted #888;
+	margin:8px 0px 0px;
+	}
+#news_cont_title h2{
+	font:normal bold 24px/36px 宋体;
+	}
+#news_cont_con{
+	}
+#news_cont_info{
+	font:normal normal 12px/16px 宋体;
+	color:#888;
+	text-align:right;
+	margin:0px 0px 8px;
+	}
+	/*----page num=分页--------*/
+#page_num{
+	margin:10px 0px;
+	float:right;
+	height:24px;
+	}
+#page_num ul{
+	height:21px;
+	}
+#page_num ul li{
+	float:left;
+	list-style:none;
+	padding:0px 6px;
+	background:#00a1e9;
+	margin:0px 4px;
+	font:normal normal 14px/24px Consolas,Verdana,宋体;
+	}
+#page_num ul a li{
+	color:#fff;
+	border:1px solid #fff;
+	}
+#page_num ul a:hover li{
+	border:1px dotted #888;
+	}
+#page_num .page_on{
+	background:#e42a2a;
+	}
+/*-----------------------*/
+.talkss_head{
+	font:normal bold 16px 微软雅黑;
+	border-bottom:1px dotted #888;
+	margin:12px 0px;
+	}
+#talks{
+	width:500px;
+	margin:0px 0px 10px 0px;
+	padding:0px 0px 10px;
+	}
+#talks textarea{
+	height:80px;
+	width:500px;
+	margin:10px 0px;
+	}
+#talks input[type=submit]{
+	height:30px;
+	width:80px;
+	}
+#talks span{
+	vertical-align:top;
+	font:normal normal 14px 宋体;
+	height:80px;
+	}
+#talkss{
+	border-bottom:1px dotted #888;
+	margin:10px 0px 10px 0px;
+	}
+div.talks_author{
+	margin:0px 10px 10px 0px;
+	padding:0px 10px 0px 0px;
+	width:100px;
+	text-align:right;
+	font:normal bold 16px 微软雅黑;
+	float:left;
+	border-right:2px solid #00a1e9;
+	}
+div.talks_author p{
+	font:normal normal 12px 微软雅黑;
+	color:gray;
+	}
+div.talks_con{
+	padding:0px 0px 10px;
+	width:560px;
+	float:left;
+	font:normal normal 14px/20px  宋体;
+	color:#333;
+	}
+/*---news--act--*/
+div#act_summary{
+	}
+div#act_summary h3{
+	height:;
+	padding:10px 0px;
+	color:#00a1e9;
+	font:normal bold large 微软雅黑,黑体,宋体;
+	}
+div#act_summary #act_summary_img{
+	overflow:hidden;
+	height:200px;
+	width:300px;
+	float:left;
+	}
+#act_summary_text{
+	width:380px;
+	float:left;
+	padding-left:10px;
+	}
+#act_summary_text ul li{
+	list-style-type:none;
+	font:normal normal 16px/26px 微软雅黑,宋体;
+	color:#333;
+	}
+#act_summary_text ul li span{
+	display:inline-block;
+	width:80px;
+	text-align:left;
+	}
+#act_summary_text input{
+	margin:10px 0px 0px 80px;
+	height:30px;
+	width:80px;
+	}
+#act_cont{
+	margin:0px 0px 10px 0px;
+	padding:10px 0px;
+	border-bottom:1px dotted #888;
+	font:normal normal 14px/22px 宋体;
+	}
+.act_cont_con{
+	}
+.act_cont_con img{
+	margin:0px auto;
+	display:block;
+	}
+div#act_host_info{
+	}
+div#host_info_img{
+	float:left;
+	height:75px;
+	width:75px;
+	}
+div#host_info_text{
+	margin-left:85px;
+	height:75px;
+	}
+div#host_info_text p{
+	font:normal bold 18px/24px 微软雅黑;
+	color:#00a1e9;
+	}
+div#host_info_text li{
+	list-style-type:none;
+	font:normal normal 14px/20px 宋体;
+	color:#888;
+	}
+/*------------reg ---------log-----------*/
+div#reg_log{
+	margin:20px auto;
+	width:800px;
+	}
+#reg_log h3{
+	font:normal bold x-large 微软雅黑;
+	color:#00a1e9;
+	margin:12px 0px; 
+	}
+#reg_log h3 span{
+	font:normal normal small 微软雅黑;
+	color:#e42a2a;
+	}
+div#reg_log_input{
+	float:left;
+	border-right:4px dashed #00a1e9;
+	height:188px;
+	width:340px;
+	}
+div#reg_log_tips{
+	float:left;
+	height:188px;
+	width:380px;
+	padding:10px;
+	background:url("../image/mali_logo_.jpg") no-repeat 20px 30px;
+	font:normal normal 12px 微软雅黑;
+	}
+div#reg_log_input ul{
+	margin:0px;
+	padding:0px;
+	}
+div#reg_log_input ul li{
+	height:22px;
+	margin:8px 0px;
+	list-style-type:none;
+	}
+div#reg_log_input ul li span{
+	display:inline-block;
+	width:90px;
+	font:normal normal 18px 微软雅黑;
+	text-align:right;
+	}
+div#reg_log_input ul li input[type=text]{
+	height:18px;
+	width:200px;
+	}
+div#reg_log_input ul li input[type=submit]{
+	height:36px;
+	width:120px;
+	}

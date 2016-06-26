@@ -10,6 +10,7 @@ class cst_ctl extends ctl{
 		parent::__construct();
 		$this->ssn_hnd();
 		$this->req_smt();
+		define('TPL_LNK', 'tpl/web/');
 	}
 
 	public function __destruct(){
@@ -17,6 +18,7 @@ class cst_ctl extends ctl{
 	}
 
 	public function req_smt(){
+
 		require LIB_PTH.'smarty/libs/Smarty.class.php';
 	}
 }
