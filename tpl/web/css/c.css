@@ -5,23 +5,23 @@
 	outline:0;
 	text-decoration:none;
 	}
-div#container{
+#container{
 	}
 /*---------------------------------topbanner--------------------------------------------------*/
-div#topbanner{
+#topbanner{
 	height:24px;
 	width:auto;
 	background:#000;
 	}
-div#topbanner a{
+#topbanner a{
 	color:white;
 	text-decoration:none;
 	}
-div#topbanner a:hover {color:#e42a2a;}
-div#topbanner img{
+#topbanner a:hover {color:#e42a2a;}
+#topbanner img{
 	border:none;
 	}
-div#topbanner .tb_content{
+#topbanner .tb_content{
 	width:1050px;
 	margin:0px auto;
 	color:white;
@@ -55,23 +55,23 @@ div.icon3{
 	}
 
 /*--------------------------nav------------------------------*/
-div#nav{
+#nav{
 	height:110px;
 	width:auto;
 	background:#f9f9f9;
 	}
-div#nav_c{
+#nav_c{
 	width:1050px;
 	height:110px;
 	margin:0px auto;
 	background:#f0f0f0;
 	}
-div#mali_logo{
+#mali_logo{
 	float:left;
 	height:110px;
 	width:233px;
 	}
-div#nav_c5{
+#nav_c5{
 	float:right;
 	font:;
 	}
@@ -112,24 +112,24 @@ div#nav_c5{
 	}
 	
 /*-----------------------------pic_wall----------------------*/
-div#page{
+#page{
 	width:1050px;
 	margin-top:10px;
 	margin-left:auto;
 	margin-right:auto;
 	}
 
-div#pic_wall{
+#pic_wall{
 	width:1050px;
 	height:280px;
 	margin:10px auto;
 	}
-div#pic_wall_1{
+#pic_wall_1{
 	float:left;
 	width:300px;
 	overflow:hidden;
 	}
-div#pic_wall_1 ul li{
+#pic_wall_1 ul li{
 	height:88px;
 	width:300px;
 	margin-bottom:8px;
@@ -137,18 +137,18 @@ div#pic_wall_1 ul li{
 	list-style:none;
 	overflow:hidden;
 	}
-div#pic_wall_1 ul li img{
+#pic_wall_1 ul li img{
 	height:88px;
 	text-align:center;
 	}
-div#pic_wall_2{
+#pic_wall_2{
 	float:left;
 	width:308px;
 	height:280px;
 	padding:0px -10px -10px 0px;
 	overflow:hidden;
 	}
-div#pic_wall_2 ul li{
+#pic_wall_2 ul li{
 	display:block;
 	height:136px;
 	width:148px;
@@ -157,24 +157,24 @@ div#pic_wall_2 ul li{
 	overflow:hidden;
 	padding:0px 0px 6px 6px;
 	}
-div#pic_wall_2 ul li img{
+#pic_wall_2 ul li img{
 	width:146px;
 	overflow:hidden;
 	border:1px solid gray;
 	}
-div#pic_wall_2 ul li a div{
+#pic_wall_2 ul li a div{
 	font:normal normal 12px/16px 微软雅黑,宋体;
 	height:32px;
 	overflow:hidden;
 	}
-div#pic_wall_2 ul li a{
+#pic_wall_2 ul li a{
 	color:#00a1e9;
 	}
-div#pic_wall_2 ul li a:hover{
+#pic_wall_2 ul li a:hover{
 	color:#e42a2a;
 	text-decoration:underline;
 	}
-div#pic_focus{
+#pic_focus{
 	float:left;
 	width:420px;
 	height:280px;
@@ -183,42 +183,42 @@ div#pic_focus{
 /*--------------pic_wall ----------------*/
 
 /*----calendar & schedule---*/
-div#cale{
+#cale{
 	height:240px;
 	}
-div#calendar{
+#calendar{
 	height:240px;
 	width:340px;
 	background:#00a1e9;
 	float:left;
 	}
-div#calendar table{
+#calendar table{
 	margin:0 auto;
 	border-collapse:collapse;
 	margin-bottom:6px;
 	color:white;
 	}
-div#calendar table caption{
+#calendar table caption{
 	height:30px;
 	font:normal normal 18px/30px Verdana,微软雅黑,黑体;
 	}
-div#calendar table  tr th{
+#calendar table  tr th{
 	text-align:center;
 	width:46px;
 	height:20px;
 	font:normal normal 16px/18px 微软雅黑,黑体;
 	}
-div#calendar table  tr td{
+#calendar table  tr td{
 	height:22px;
 	border: 2px solid silver;
 	text-align:center;
 	font:normal normal 16px/18px 微软雅黑,黑体;
 	}
 
-div#calendar table .cale_on{
+#calendar table .cale_on{
 	background:#e42a2a;
 	}
-div#under_cale{
+#under_cale{
 	height:60px;
 	width:340px;
 	background:#ff9933;
@@ -226,39 +226,39 @@ div#under_cale{
 	left:20px;
 	top:20px;
 	}
-div#schedule{
+#schedule{
 	width:340px;
 	height:240px;
 	background:white;
 	float:right;
 	}
-div#schedule div#schedule_con{
+#schedule #schedule_con{
 	height:204px;
 	overflow:auto;
 	}
-div#schedule_con ul li{
+#schedule_con ul li{
 	list-style:disc outside url("../image/schedule_list.png");
 	font:normal normal 14px/18px 微软雅黑,宋体;
 	margin:5px 0px 0px 26px;
 	}
-div#schedule_con ul li a:link{
+#schedule_con ul li a:link{
 	color:#00a1e9;
 	}
-div#schedule_con ul li a:visited{
+#schedule_con ul li a:visited{
 	color:#00a1e9;
 	}
-div#schedule_con ul li a:hover{
+#schedule_con ul li a:hover{
 	text-decoration:underline;
 	color:#e42a2a;
 	}
 /*-------------------page content -left -right---------*/
-div#page_left_1{
+#page_left_1{
 	float:left;
 	clear:left;
 	width:690px;
 	margin-right:0px;
 	}
-div#page_right_1{
+#page_right_1{
 	float:right;
 	width:340px;
 	margin:0px;
@@ -310,37 +310,37 @@ div#page_right_1{
 	padding:0px 14px;
 	}
 /*-----------page---------------*/
-div#list_all{
+#list_all{
 	height:80px;
 	width:690px;
 	margin:10px 0px;
 	}
-div#list_all table{
+#list_all table{
 	width:100%;
 	height:100%;
 	border:4px solid #fff;;
 	}
-div#list_all table td{
+#list_all table td{
 	background:#00a1e9;
 	text-align:center;	
 	color:#fff;
 	font:normal bold 16px 微软雅黑,宋体;
 	}
-div#list_all table td a{
+#list_all table td a{
 	color:#fff;
 	}
-div#list_all table td a:hover{
+#list_all table td a:hover{
 	color:#fff;
 	text-decoration:underline;
 	}
-div#list_all table td.bg2{
+#list_all table td.bg2{
 	background:#e42a2a;
 	}
-div#act_hot{
+#act_hot{
 	height:230px;
 	width:690px;
 	}
-div#act_hot_pages{
+#act_hot_pages{
 	margin:10px auto;
 	height:18px;
 	float:right;
@@ -363,7 +363,7 @@ div#act_hot_pages{
 #act_hot_page_next{
 	background-position:-30px 0px;
 	}
-div#act_hot_cons{
+#act_hot_cons{
 	}
 div.act_hot_con{
 	height:150px;
@@ -395,13 +395,13 @@ div.act_hot_title{
 	margin:6px auto;
 	line-height:18px;
 	}
-div#act_hot a:link {
+#act_hot a:link {
 	text-decoration:none;
 	}
-div#act_hot a:hover div.act_hot_img{
+#act_hot a:hover div.act_hot_img{
 	border:1px solid #E42A2A;
 	}
-div#act_hot a:hover div.act_hot_title{
+#act_hot a:hover div.act_hot_title{
 	color:#e42a2a;
 	text-decoration:underline;
 	}
@@ -463,33 +463,33 @@ div.act_con_body p{
 	overflow:hidden;
 	}
 	/*------------------------------------act cons  -----report------------------------------------*/
-div#report{
+#report{
 	clear:both;
 	width:1050px;
 	margin-right:-10px;
 	padding:10px 0px;
 	}
-div#report_list{
+#report_list{
 	width:338px;
 	float:left;
 	margin-right:18px;
 	}
-div#report_list ul{
+#report_list ul{
 	padding:8px 0px;
 	border-bottom:1px dotted #808080;
 	}
-div#report_list ul li{
+#report_list ul li{
 	list-style:none;
 	margin:0px 0px 2px 0px;
 	width:330px;
 	}
-div#report_list ul li p{
+#report_list ul li p{
 	color:#c0c0c0;
 	font:normal normal 12px 宋体;
 	margin:0px;
 	padding:0px;
 	}
-div#report_list ul li a{
+#report_list ul li a{
 	color:#444;
 	font:normal normal 14px/24px 宋体;
 	margin:0px;
@@ -499,116 +499,116 @@ div#report_list ul li a{
 	width:330px;
 	height:22px;
 	}
-div#report_list ul li a:hover{
+#report_list ul li a:hover{
 	color:#e42a2a;
 	text-decoration:underline;
 	}
-div#report_best{
+#report_best{
 	width:338px;
 	float:left;
 	margin-right:18px;
 	}
-div#report_best li{
+#report_best li{
 	list-style:none;
 	height:50px;
 	margin:5px 0px;
 	}
-div#report_best ul li img{
+#report_best ul li img{
 	height:50px;
 	overflow:hidden;
 	}
-div#report_best ul li div{
+#report_best ul li div{
 	display:inline-block;
 	width:258px;
 	height:50px;
 	overflow:hidden;
 	margin-left:4px;
 	}
-div#report_best ul li div h3{
+#report_best ul li div h3{
 	margin:0px;
 	width:280px;
 	height:24px;
 	font:normal bold 16px/24px 微软雅黑,宋体;
 	overflow:hidden;
 	}
-div#report_best ul li div p{
+#report_best ul li div p{
 	margin:0px;
 	overflow:hidden;
 	font:normal normal 12px 宋体;
 	color:gray;
 	}
-div#report_best ul li h3 a{
+#report_best ul li h3 a{
 	color:#00a1e9;
 	}
-div#report_best ul li h3 a:hover{
+#report_best ul li h3 a:hover{
 	color:#e42a2a;
 	text-decoration:underline;
 	}
-div#report_last{
+#report_last{
 	width:338px;
 	float:left;
 	}
-div#report_last_info{
+#report_last_info{
 	margin:10px 0px;
 	}
-div#report_last_img {
+#report_last_img {
 	height:200px;
 	width:300px;
 	margin:0px auto;
 	border:;
 	}
-div#report_last_info h3{
+#report_last_info h3{
 	margin:10px 0px 0px;
 	font:normal bold 16px 微软雅黑;
 	}
-div#report_last_info h3 a{
+#report_last_info h3 a{
 	color:#00a1e9;
 	}
-div#report_last_info h3 a:hover{
+#report_last_info h3 a:hover{
 	color:#e42a2a;
 	text-decoration:underline;
 	}
-div#report_last_info p{
+#report_last_info p{
 	margin:0px 0px 10px;
 	color:#808080;
 	font:normal normal 12px/14px 宋体;
 	}
-div#report_last_img img{
+#report_last_img img{
 	height:200px;
 	}
-div#report_last ul{
+#report_last ul{
 	height:126px;
 	}
-div#report_last ul li{
+#report_last ul li{
 	height:18px;
 	font:normal normal 14px/18px 微软雅黑,宋体;
 	list-style:inside;
 	overflow:hidden;
 	}
-div#report_last ul li a{
+#report_last ul li a{
 	color:#333;
 	}
-div#report_last ul li a:hover{
+#report_last ul li a:hover{
 	color:#e42a2a;
 	text-decoration:underline;
 	}
 /*----------report ------------ exp--------------*/
-div#exp{
+#exp{
 	clear:both;
 	width:1050px;
 	margin-right:-10px;
 	}
-div#exp_buy{
+#exp_buy{
 	width:338px;
 	float:left;
 	margin-right:18px;
 	}
-div#exp_use{
+#exp_use{
 	width:338px;
 	float:left;
 	margin-right:18px;
 	}
-div#exp_tour{
+#exp_tour{
 	width:338px;
 	float:left;
 	}
@@ -696,10 +696,10 @@ div#exp_tour{
 	float:right;
 	}
 /*----act_host_best-----*/
-div#act_host_best{
+#act_host_best{
 	margin:10px 0px;
 	}
-div#act_hosts{
+#act_hosts{
 	width:310px;
 	}
 div.act_host{
@@ -736,7 +736,7 @@ div.act_host a .act_host_con{
 	overflow:hidden;	
 	}
 /*-------------news----act apply--------------*/
-div#act_apply .con_bg{
+#act_apply .con_bg{
 	padding:10px;
 	}
 	

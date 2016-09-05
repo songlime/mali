@@ -8,10 +8,10 @@
 	<meta name="keywords" content="your,keywords,goes,here" />
 	<meta name="robots" content="all" />
 	<meta name="author" content="maliqiche.com" />
-	<link rel="stylesheet" type="text/css" href="{TPL_LNK}css/c.css" />
-	<link rel="stylesheet" type="text/css" href="{TPL_LNK}css/solid.css" />
-	<link rel="shortcut" href="favicon.ico" type="{TPL_LNK}image/x-icon" />
-	<script language="JavaScript" src="{TPL_LNK}js/js.js" type="text/javascript"> </script>
+	<link rel="stylesheet" type="text/css" href="/{TPL_LNK}css/c.css" />
+	<link rel="stylesheet" type="text/css" href="/{TPL_LNK}css/solid.css" />
+	<link rel="shortcut" href="favicon.ico" type="/{TPL_LNK}image/x-icon" />
+	<script language="JavaScript" src="/{TPL_LNK}js/js.js" type="text/javascript"> </script>
 </head>
 <body>
 <div id="container">
@@ -29,7 +29,7 @@
 </div><!--top banner end-->
 <div id="nav">
 	<div id="nav_c">
-	<div id="mali_logo"><a href="www.maliqiche.com" target="_blank"><img src="{TPL_LNK}image/mali_logo.jpg" alt="马力汽车" /></a></div>
+	<div id="mali_logo"><a href="www.maliqiche.com" target="_blank"><img src="/{TPL_LNK}img/mali_logo.jpg" alt="马力汽车" /></a></div>
 	<div id="nav_c5">
 	<div class="nav_c11"></div>
 	<div  class="nav_c12"><ul><li><a href="" target="_self" >按时间</a></li><li><a href="" target="_self" >按类型</a></li><li><a href="" target="_self" >按品牌</a></li></ul></div>
@@ -48,29 +48,29 @@
 	<div id="pic_wall">
 	<div id="pic_wall_1">
 		<ul>
-			<li><a href="" target="_blank" ><img src="{TPL_LNK}image/ad/picwall1.jpg" alt="" /></a></li>
-			<li><a href="" target="_blank" ><img src="{TPL_LNK}image/ad/picwall2.jpg" alt="" /></a></li>
-			<li><a href="" target="_blank" ><img src="{TPL_LNK}image/ad/picwall3.jpg" alt="" /></a></li>
+			<li><a href="" target="_blank" ><img src="/{TPL_LNK}img/ad/picwall1.jpg" alt="" /></a></li>
+			<li><a href="" target="_blank" ><img src="/{TPL_LNK}img/ad/picwall2.jpg" alt="" /></a></li>
+			<li><a href="" target="_blank" ><img src="/{TPL_LNK}img/ad/picwall3.jpg" alt="" /></a></li>
 		</ul>
 	</div>
 	<div id="pic_focus">	
 	<div id="outer">
 	<ul id="inner">
-		<li><a href="" target=""><img src="{TPL_LNK}image/solid/11.jpg" width="420" height="280" alt=" "></a></li>
-		<li><a href="" target=""><img src="{TPL_LNK}image/solid/22.jpg" width="420" height="280" alt=" "></a></li>
-		<li><a href="" target=""><img src="{TPL_LNK}image/solid/33.jpg" width="420" height="280" alt=" "></a></li>
-		<li><a href="" target=""><img src="{TPL_LNK}image/solid/44.jpg" width="420" height="280" alt=" "></a></li>
-		<li><a href="" target=""><img src="{TPL_LNK}image/solid/55.jpg" width="420" height="280"  alt=" "></a></li>
-		<li><a href="" target=""><img src="{TPL_LNK}image/solid/66.jpg" width="420" height="280"  alt=" "></a></li>
+		<li><a href="" target=""><img src="/{TPL_LNK}img/solid/11.jpg" width="420" height="280" alt=" "></a></li>
+		<li><a href="" target=""><img src="/{TPL_LNK}img/solid/22.jpg" width="420" height="280" alt=" "></a></li>
+		<li><a href="" target=""><img src="/{TPL_LNK}img/solid/33.jpg" width="420" height="280" alt=" "></a></li>
+		<li><a href="" target=""><img src="/{TPL_LNK}img/solid/44.jpg" width="420" height="280" alt=" "></a></li>
+		<li><a href="" target=""><img src="/{TPL_LNK}img/solid/55.jpg" width="420" height="280"  alt=" "></a></li>
+		<li><a href="" target=""><img src="/{TPL_LNK}img/solid/66.jpg" width="420" height="280"  alt=" "></a></li>
 	</ul>
 	</div>
 	</div>
 	<div id="pic_wall_2">
 		<ul>
-			<li><a href="" target="_blank" ><img src="{TPL_LNK}image/ad/pic_wall1.jpg" alt="" /><div>南京上汽明爵汽车自由行贯穿大江南北形成两千公里史无前例</div></a></li>
-			<li><a href="" target="_blank" ><img src="{TPL_LNK}image/ad/pic_wall2.jpg" alt="" /><div>南京上汽明爵汽车自由行贯穿大江南北形成两千公里史无前例</div></a></li>
-			<li><a href="" target="_blank" ><img src="{TPL_LNK}image/ad/pic_wall3.jpg" alt="" /><div>南京上汽明爵汽车自由行贯穿大江南北形成两千公里史无前例</div></a></li>
-			<li><a href="" target="_blank" ><img src="{TPL_LNK}image/ad/pic_wall4.jpg" alt="" /><div>南京上汽明爵汽车自由行贯穿大江南北形成两千公里史无前例</div></a></li>
+			<li><a href="" target="_blank" ><img src="/{TPL_LNK}img/ad/pic_wall1.jpg" alt="" /><div>南京上汽明爵汽车自由行贯穿大江南北形成两千公里史无前例</div></a></li>
+			<li><a href="" target="_blank" ><img src="/{TPL_LNK}img/ad/pic_wall2.jpg" alt="" /><div>南京上汽明爵汽车自由行贯穿大江南北形成两千公里史无前例</div></a></li>
+			<li><a href="" target="_blank" ><img src="/{TPL_LNK}img/ad/pic_wall3.jpg" alt="" /><div>南京上汽明爵汽车自由行贯穿大江南北形成两千公里史无前例</div></a></li>
+			<li><a href="" target="_blank" ><img src="/{TPL_LNK}img/ad/pic_wall4.jpg" alt="" /><div>南京上汽明爵汽车自由行贯穿大江南北形成两千公里史无前例</div></a></li>
 		</ul>
 	</div>
 	</div>
@@ -123,25 +123,25 @@
 	-->
 	<div class="act_hot_con act_hot_con_left">
 		<a href="" alt="" target="_blank">
-		<div class="act_hot_img"><img src="{TPL_LNK}image/act_hot/camero.jpg" /></div>
+		<div class="act_hot_img"><img src="/{TPL_LNK}img/act_hot/camero.jpg" /></div>
 		<div class="act_hot_title">南京南京汽车倾情巨献盛大出演活动内容很不错的大好河山和汽车竞技涡轮增压速度与激情燃烧肾上腺素</div>
 		</a>
 	</div>
 	<div class="act_hot_con">
 		<a href="" alt="" target="_blank">
-		<div class="act_hot_img"><img src="{TPL_LNK}image/act_hot/act_hot2.jpg" /></div>
+		<div class="act_hot_img"><img src="/{TPL_LNK}img/act_hot/act_hot2.jpg" /></div>
 		<div class="act_hot_title">南京南京汽车倾情巨献盛大出演活动内容很不错的大好河山和汽车竞技涡轮增压速度与激情燃烧肾上腺素</div>
 		</a>
 	</div>
 	<div class="act_hot_con">
 		<a href="" alt="" target="_blank">
-		<div class="act_hot_img"><img src="{TPL_LNK}image/act_hot/act_hot3.jpg" /></div>
+		<div class="act_hot_img"><img src="/{TPL_LNK}img/act_hot/act_hot3.jpg" /></div>
 		<div class="act_hot_title">南京南京汽车倾情巨献盛大出演活动内容很不错的大好河山和汽车竞技涡轮增压速度与激情燃烧肾上腺素</div>
 		</a>
 	</div>
 	<div class="act_hot_con">
 		<a href="" alt="" target="_blank">
-		<div class="act_hot_img"><img src="{TPL_LNK}image/act_hot/act_hot4.jpg" /></div>
+		<div class="act_hot_img"><img src="/{TPL_LNK}img/act_hot/act_hot4.jpg" /></div>
 		<div class="act_hot_title">南京南京汽车倾情巨献盛大出演活动内容很不错的大好河山和汽车竞技涡轮增压速度与激情燃烧肾上腺素</div>
 		</a>
 	</div>
@@ -150,7 +150,7 @@
 		<div class="title_bg">试驾活动<span><a href="www.maliqiche.com" target="_blank">查看更多&gt;&gt;</a></span></div>
 		<div class="act_con">
 		<a href="" target="_blank">
-		<div class="act_con_img"><img src="{TPL_LNK}image/act_hot/cc.jpg" /></div>
+		<div class="act_con_img"><img src="/{TPL_LNK}img/act_hot/cc.jpg" /></div>
 		</a>	
 		<div class="act_con_con">
 		<a href="" target="_blank">
@@ -161,7 +161,7 @@
 		</div>
 		<div class="act_con">
 		<a href="" target="_blank">
-		<div class="act_con_img"><img src="{TPL_LNK}image/act_hot/audi.jpg" /></div>
+		<div class="act_con_img"><img src="/{TPL_LNK}img/act_hot/audi.jpg" /></div>
 		</a>	
 		<div class="act_con_con">
 		<a href="" target="_blank">
@@ -172,7 +172,7 @@
 		</div>
 		<div class="act_con">
 		<a href="" target="_blank">
-		<div class="act_con_img"><img src="{TPL_LNK}image/act_hot/tt.jpg" /></div>
+		<div class="act_con_img"><img src="/{TPL_LNK}img/act_hot/tt.jpg" /></div>
 		</a>	
 		<div class="act_con_con">
 		<a href="" target="_blank">
@@ -183,7 +183,7 @@
 		</div>
 		<div class="act_con">
 		<a href="" target="_blank">
-		<div class="act_con_img"><img src="{TPL_LNK}image/act_hot/slk.jpg" /></div>
+		<div class="act_con_img"><img src="/{TPL_LNK}img/act_hot/slk.jpg" /></div>
 		</a>	
 		<div class="act_con_con">
 		<a href="" target="_blank">
@@ -199,7 +199,7 @@
 		
 		<div class="act_con">
 		<a href="" target="_blank">
-		<div class="act_con_img"><img src="{TPL_LNK}image/act_hot/act_hot3.jpg" /></div>
+		<div class="act_con_img"><img src="/{TPL_LNK}img/act_hot/act_hot3.jpg" /></div>
 		</a>	
 		<div class="act_con_con">
 		<a href="" target="_blank">
@@ -210,7 +210,7 @@
 		</div>
 		<div class="act_con">
 		<a href="" target="_blank">
-		<div class="act_con_img"><img src="{TPL_LNK}image/act_hot/camero.jpg" /></div>
+		<div class="act_con_img"><img src="/{TPL_LNK}img/act_hot/camero.jpg" /></div>
 		</a>	
 		<div class="act_con_con">
 		<a href="" target="_blank">
@@ -221,7 +221,7 @@
 		</div>
 		<div class="act_con">
 		<a href="" target="_blank">
-		<div class="act_con_img"><img src="{TPL_LNK}image/act_hot/c.jpg" /></div>
+		<div class="act_con_img"><img src="/{TPL_LNK}img/act_hot/c.jpg" /></div>
 		</a>	
 		<div class="act_con_con">
 		<a href="" target="_blank">
@@ -232,7 +232,7 @@
 		</div>
 		<div class="act_con">
 		<a href="" target="_blank">
-		<div class="act_con_img"><img src="{TPL_LNK}image/act_hot/benz.jpg" /></div>
+		<div class="act_con_img"><img src="/{TPL_LNK}img/act_hot/benz.jpg" /></div>
 		</a>	
 		<div class="act_con_con">
 		<a href="" target="_blank">
@@ -249,7 +249,7 @@
 		
 		<div class="act_con">
 		<a href="" target="_blank">
-		<div class="act_con_img"><img src="{TPL_LNK}image/act_hot/j.jpg" /></div>
+		<div class="act_con_img"><img src="/{TPL_LNK}img/act_hot/j.jpg" /></div>
 		</a>	
 		<div class="act_con_con">
 		<a href="" target="_blank">
@@ -260,7 +260,7 @@
 		</div>
 		<div class="act_con">
 		<a href="" target="_blank">
-		<div class="act_con_img"><img src="{TPL_LNK}image/act_hot/rn.jpg" /></div>
+		<div class="act_con_img"><img src="/{TPL_LNK}img/act_hot/rn.jpg" /></div>
 		</a>	
 		<div class="act_con_con">
 		<a href="" target="_blank">
@@ -271,7 +271,7 @@
 		</div>
 		<div class="act_con">
 		<a href="" target="_blank">
-		<div class="act_con_img"><img src="{TPL_LNK}image/act_hot/audi.jpg" /></div>
+		<div class="act_con_img"><img src="/{TPL_LNK}img/act_hot/audi.jpg" /></div>
 		</a>	
 		<div class="act_con_con">
 		<a href="" target="_blank">
@@ -282,7 +282,7 @@
 		</div>
 		<div class="act_con">
 		<a href="" target="_blank">
-		<div class="act_con_img"><img src="{TPL_LNK}image/act_hot/act_hot3.jpg" /></div>
+		<div class="act_con_img"><img src="/{TPL_LNK}img/act_hot/act_hot3.jpg" /></div>
 		</a>	
 		<div class="act_con_con">
 		<a href="" target="_blank">
@@ -298,7 +298,7 @@
 		
 		<div class="act_con">
 		<a href="" target="_blank">
-		<div class="act_con_img"><img src="{TPL_LNK}image/act_hot/j.jpg" /></div>
+		<div class="act_con_img"><img src="/{TPL_LNK}img/act_hot/j.jpg" /></div>
 		</a>	
 		<div class="act_con_con">
 		<a href="" target="_blank">
@@ -309,7 +309,7 @@
 		</div>
 		<div class="act_con">
 		<a href="" target="_blank">
-		<div class="act_con_img"><img src="{TPL_LNK}image/act_hot/rn.jpg" /></div>
+		<div class="act_con_img"><img src="/{TPL_LNK}img/act_hot/rn.jpg" /></div>
 		</a>	
 		<div class="act_con_con">
 		<a href="" target="_blank">
@@ -320,7 +320,7 @@
 		</div>
 		<div class="act_con">
 		<a href="" target="_blank">
-		<div class="act_con_img"><img src="{TPL_LNK}image/act_hot/audi.jpg" /></div>
+		<div class="act_con_img"><img src="/{TPL_LNK}img/act_hot/audi.jpg" /></div>
 		</a>	
 		<div class="act_con_con">
 		<a href="" target="_blank">
@@ -331,7 +331,7 @@
 		</div>
 		<div class="act_con">
 		<a href="" target="_blank">
-		<div class="act_con_img"><img src="{TPL_LNK}image/act_hot/act_hot3.jpg" /></div>
+		<div class="act_con_img"><img src="/{TPL_LNK}img/act_hot/act_hot3.jpg" /></div>
 		</a>	
 		<div class="act_con_con">
 		<a href="" target="_blank">
@@ -426,7 +426,7 @@
 		</div>
 		</div>
 		<div id="ad_block_right">
-		<img src="{TPL_LNK}image/ad/block.jpg" />	
+		<img src="/{TPL_LNK}img/ad/block.jpg" />	
 		</div>
 		<div id="act_host_best">
 		<div class="title_bg">热门主办方</div>	
@@ -434,7 +434,7 @@
 			<div id="act_hosts">
 			<div class="act_host">
 			<a href="" target="">
-				<img src="{TPL_LNK}image/act_host/hhdz.jpg" alt="" />
+				<img src="/{TPL_LNK}img/act_host/hhdz.jpg" alt="" />
 				<div class="act_host_body">
 				<div class="act_host_title">南京华海大众汽车销售有限公司</div>
 				<div class="act_host_con">南京最最最最最最最最专业的汽车销售大众公司</div>
@@ -443,7 +443,7 @@
 			</div>
 			<div class="act_host">
 			<a href="" target="">
-				<img src="{TPL_LNK}image/act_host/jeep.jpg" alt="" />
+				<img src="/{TPL_LNK}img/act_host/jeep.jpg" alt="" />
 				<div class="act_host_body">
 				<div class="act_host_title">南京Jeep玩具店</div>
 				<div class="act_host_con">南京最最最最最最最最大最贵的汽车玩具店</div>
@@ -452,7 +452,7 @@
 			</div>
 			<div class="act_host">
 			<a href="" target="">
-				<img src="{TPL_LNK}image/act_host/bmw.jpg" alt="" />
+				<img src="/{TPL_LNK}img/act_host/bmw.jpg" alt="" />
 				<div class="act_host_body">
 				<div class="act_host_title">南京BMW壕专卖店</div>
 				<div class="act_host_con">南京最最最最最最最壕汽车批发大市场</div>
@@ -461,7 +461,7 @@
 			</div>
 			<div class="act_host">
 			<a href="" target="">
-				<img src="{TPL_LNK}image/act_host/bently.jpg" alt="" />
+				<img src="/{TPL_LNK}img/act_host/bently.jpg" alt="" />
 				<div class="act_host_body">
 				<div class="act_host_title">南京BENTLY汽车飞行俱乐部</div>
 				<div class="act_host_con">南京汽车翅膀总经销商带翅膀的大B汽车无往不利</div>
@@ -470,7 +470,7 @@
 			</div>
 			<div class="act_host">
 			<a href="" target="">
-				<img src="{TPL_LNK}image/act_host/vw.jpg" alt="" />
+				<img src="/{TPL_LNK}img/act_host/vw.jpg" alt="" />
 				<div class="act_host_body">
 				<div class="act_host_title">南京VW最帅最酷最热最火神庙拜神大殿</div>
 				<div class="act_host_con">南京神车经销总公司最神圣最高大上信仰无上光荣无价之宝加价利器</div>
@@ -479,7 +479,7 @@
 			</div>
 			<div class="act_host">
 			<a href="" target="">
-				<img src="{TPL_LNK}image/act_host/benz.jpg" alt="" />
+				<img src="/{TPL_LNK}img/act_host/benz.jpg" alt="" />
 				<div class="act_host_body">
 				<div class="act_host_title">南京BENZ汽车唯一真车专卖店</div>
 				<div class="act_host_con">南京汽车销售唯独卖真车的其他家都是模型的真车无敌</div>
@@ -488,7 +488,7 @@
 			</div>
 			<div class="act_host">
 			<a href="" target="">
-				<img src="{TPL_LNK}image/act_host/prosche.jpg" alt="" />
+				<img src="/{TPL_LNK}img/act_host/prosche.jpg" alt="" />
 				<div class="act_host_body">
 				<div class="act_host_title">南京PROSCHE青蛙批发服务中心</div>
 				<div class="act_host_con">南京田鸡青蛙蛤蟆眼睛生物研究中心专卖店老字号</div>
@@ -497,7 +497,7 @@
 			</div>
 			<div class="act_host">
 			<a href="" target="">
-				<img src="{TPL_LNK}image/act_host/lbjn.jpg" alt="" />
+				<img src="/{TPL_LNK}img/act_host/lbjn.jpg" alt="" />
 				<div class="act_host_body">
 				<div class="act_host_title">南京牛排全国连锁最正宗最蛮牛最火爆</div>
 				<div class="act_host_con">南京牛排全国连锁最正宗最蛮牛最火爆突突突停不下来非常快</div>
@@ -526,7 +526,7 @@
 		<div style="clear:both"></div>
 	</div><!--page right 1-->
 	<div style="clear:both"></div>
-	<div><a href="" target="_blank"><img src="{TPL_LNK}image/ad/banner.jpg" /></a></div>
+	<div><a href="" target="_blank"><img src="/{TPL_LNK}img/ad/banner.jpg" /></a></div>
 	<div id="report">
 	<div class="title_bg">活动报告<span><a href="www.maliqiche.com" target="_blank">查看更多&gt;&gt;</a></span></div>
 	<div id="report_list">
@@ -547,20 +547,20 @@
 		</ul>
 	</div>
 	<div id="report_best"><ul>
-		<li><img src="{TPL_LNK}image/act_rep/r1.jpg" alt="" /><div><h3><a href="" target="_blank">场活动真心好玩又好吃</a></h3><p>小明   2014-06-15</p></div></li>
-		<li><img src="{TPL_LNK}image/act_rep/r2.jpg" alt="" /><div><h3><a href="" target="_blank">速度和激情的重逢相遇带来无限乐趣导致从前人从未有过的愉悦快乐体验十分不错</a></h3><p>小明  发表于 2014-06-15</p></div></li>
-		<li><img src="{TPL_LNK}image/act_rep/r1.jpg" alt="" /><div><h3><a href="" target="_blank">场活动真心好玩又好吃</a></h3><p>小明   2014-06-15</p></div></li>
-		<li><img src="{TPL_LNK}image/act_rep/r2.jpg" alt="" /><div><h3><a href="" target="_blank">速度和激情的重逢相遇带来无限乐趣导致从前人从未有过的愉悦快乐体验十分不错</a></h3><p>小明  发表于 2014-06-15</p></div></li>
-		<li><img src="{TPL_LNK}image/act_rep/r1.jpg" alt="" /><div><h3><a href="" target="_blank">场活动真心好玩又好吃</a></h3><p>小明   2014-06-15</p></div></li>
-		<li><img src="{TPL_LNK}image/act_rep/r2.jpg" alt="" /><div><h3><a href="" target="_blank">速度和激情的重逢相遇带来无限乐趣导致从前人从未有过的愉悦快乐体验十分不错</a></h3><p>小明  发表于 2014-06-15</p></div></li>
-		<li><img src="{TPL_LNK}image/act_rep/r1.jpg" alt="" /><div><h3><a href="" target="_blank">场活动真心好玩又好吃</a></h3><p>小明   2014-06-15</p></div></li>
-		<li><img src="{TPL_LNK}image/act_rep/r2.jpg" alt="" /><div><h3><a href="" target="_blank">速度和激情的重逢相遇带来无限乐趣导致从前人从未有过的愉悦快乐体验十分不错</a></h3><p>小明  发表于 2014-06-15</p></div></li>
+		<li><img src="/{TPL_LNK}img/act_rep/r1.jpg" alt="" /><div><h3><a href="" target="_blank">场活动真心好玩又好吃</a></h3><p>小明   2014-06-15</p></div></li>
+		<li><img src="/{TPL_LNK}img/act_rep/r2.jpg" alt="" /><div><h3><a href="" target="_blank">速度和激情的重逢相遇带来无限乐趣导致从前人从未有过的愉悦快乐体验十分不错</a></h3><p>小明  发表于 2014-06-15</p></div></li>
+		<li><img src="/{TPL_LNK}img/act_rep/r1.jpg" alt="" /><div><h3><a href="" target="_blank">场活动真心好玩又好吃</a></h3><p>小明   2014-06-15</p></div></li>
+		<li><img src="/{TPL_LNK}img/act_rep/r2.jpg" alt="" /><div><h3><a href="" target="_blank">速度和激情的重逢相遇带来无限乐趣导致从前人从未有过的愉悦快乐体验十分不错</a></h3><p>小明  发表于 2014-06-15</p></div></li>
+		<li><img src="/{TPL_LNK}img/act_rep/r1.jpg" alt="" /><div><h3><a href="" target="_blank">场活动真心好玩又好吃</a></h3><p>小明   2014-06-15</p></div></li>
+		<li><img src="/{TPL_LNK}img/act_rep/r2.jpg" alt="" /><div><h3><a href="" target="_blank">速度和激情的重逢相遇带来无限乐趣导致从前人从未有过的愉悦快乐体验十分不错</a></h3><p>小明  发表于 2014-06-15</p></div></li>
+		<li><img src="/{TPL_LNK}img/act_rep/r1.jpg" alt="" /><div><h3><a href="" target="_blank">场活动真心好玩又好吃</a></h3><p>小明   2014-06-15</p></div></li>
+		<li><img src="/{TPL_LNK}img/act_rep/r2.jpg" alt="" /><div><h3><a href="" target="_blank">速度和激情的重逢相遇带来无限乐趣导致从前人从未有过的愉悦快乐体验十分不错</a></h3><p>小明  发表于 2014-06-15</p></div></li>
 		</ul>
 	</div>
 	<div id="report_last">
 		<div class="title2_bg">最新结束的活动<span><a href="" target="">更多&gt;&gt;</a></span></div>
 		<div id="report_last_info">
-			<div id="report_last_img"><img src="{TPL_LNK}image/act_hot/camero.jpg" alt="" /></div>
+			<div id="report_last_img"><img src="/{TPL_LNK}img/act_hot/camero.jpg" alt="" /></div>
 			<h3><a href="" target="">大黄蜂变形记海翻全场别样体验黄蜂季节验黄蜂季节验黄蜂季节</a></h3>
 			<p>
 			南京极地特快  2014-06-15
@@ -578,15 +578,15 @@
 	</div>
 	<div style="clear:both"></div>
 	</div>
-	<div><a href="" target="_blank"><img src="{TPL_LNK}image/ad/banner.jpg" /></a></div>
-	<div><a href="" target="_blank"><img src="{TPL_LNK}image/ad/banner.jpg" /></a></div>
+	<div><a href="" target="_blank"><img src="/{TPL_LNK}img/ad/banner.jpg" /></a></div>
+	<div><a href="" target="_blank"><img src="/{TPL_LNK}img/ad/banner.jpg" /></a></div>
 	<div id="exp">
 	<div class="title_bg">经验<span><a href="www.maliqiche.com" target="_blank">查看更多&gt;&gt;</a></span></div>
 	<div id="exp_buy">
 		<div class="title2_bg">买车经验<span><a href="" target="">更多&gt;&gt;</a></span></div>
 		<div class="exp_con_line1">
-		<div class="exp_con_line1_con"><a href="" target=""><div class="exp_img"><img src="{TPL_LNK}image/exp/j.jpg" alt="" /></div><p>第一次提车注意事项如下10万点须知必须注意献给所有买车的人</p></a></div>	
-		<div class="exp_con_line1_con con_end"><a href="" target=""><div class="exp_img"><img src="{TPL_LNK}image/exp/v.jpg" alt="" /></div><p>第一次提车注意事项如下10万点须知必须注意献给所有买车的人</p></a></div>	
+		<div class="exp_con_line1_con"><a href="" target=""><div class="exp_img"><img src="/{TPL_LNK}img/exp/j.jpg" alt="" /></div><p>第一次提车注意事项如下10万点须知必须注意献给所有买车的人</p></a></div>	
+		<div class="exp_con_line1_con con_end"><a href="" target=""><div class="exp_img"><img src="/{TPL_LNK}img/exp/v.jpg" alt="" /></div><p>第一次提车注意事项如下10万点须知必须注意献给所有买车的人</p></a></div>	
 		</div>
 		<ul class="exp_ul">
 		<li><a href="" target="_self">第一次提车注意事项如下10万点须知必须注意献给所有买车的人</a><span>[04-06]</span></li>
@@ -606,8 +606,8 @@
 	<div id="exp_use">
 		<div class="title2_bg">用车经验<span><a href="" target="">更多&gt;&gt;</a></span></div>
 		<div class="exp_con_line1">
-		<div class="exp_con_line1_con"><a href="" target=""><div class="exp_img"><img src="{TPL_LNK}image/exp/p.jpg" alt="" /></div><p>第一次提车注意事项如下10万点须知必须注意献给所有买车的人</p></a></div>	
-		<div class="exp_con_line1_con con_end"><a href="" target=""><div class="exp_img"><img src="{TPL_LNK}image/exp/l.jpg" alt="" /></div><p>第一次提车注意事项如下10万点须知必须注意献给所有买车的人</p></a></div>	
+		<div class="exp_con_line1_con"><a href="" target=""><div class="exp_img"><img src="/{TPL_LNK}img/exp/p.jpg" alt="" /></div><p>第一次提车注意事项如下10万点须知必须注意献给所有买车的人</p></a></div>	
+		<div class="exp_con_line1_con con_end"><a href="" target=""><div class="exp_img"><img src="/{TPL_LNK}img/exp/l.jpg" alt="" /></div><p>第一次提车注意事项如下10万点须知必须注意献给所有买车的人</p></a></div>	
 		</div>
 		<ul class="exp_ul">
 		<li><a href="" target="_self">第一次提车注意事项如下10万点须知必须注意献给所有买车的人</a><span>[04-06]</span></li>
@@ -627,14 +627,14 @@
 	<div id="exp_tour">
 		<div class="title2_bg">自驾游<span><a href="" target="">更多&gt;&gt;</a></span></div>
 		<div class="exp_con_line1">
-		<div class="exp_con_line1_con"><a href="" target=""><div class="exp_img"><img src="{TPL_LNK}image/exp/a.jpg" alt="" /></div><p>第一次提车注意事项如下10万点须知必须注意献给所有买车的人</p></a></div>	
-		<div class="exp_con_line1_con con_end"><a href="" target=""><div class="exp_img"><img src="{TPL_LNK}image/exp/ab.jpg" alt="" /></div><p>第一次提车注意事项如下10万点须知必须注意献给所有买车的人</p></a></div>	
+		<div class="exp_con_line1_con"><a href="" target=""><div class="exp_img"><img src="/{TPL_LNK}img/exp/a.jpg" alt="" /></div><p>第一次提车注意事项如下10万点须知必须注意献给所有买车的人</p></a></div>	
+		<div class="exp_con_line1_con con_end"><a href="" target=""><div class="exp_img"><img src="/{TPL_LNK}img/exp/ab.jpg" alt="" /></div><p>第一次提车注意事项如下10万点须知必须注意献给所有买车的人</p></a></div>	
 		</div><div class="exp_con_line1">
-		<div class="exp_con_line1_con"><a href="" target=""><div class="exp_img"><img src="{TPL_LNK}image/exp/l.jpg" alt="" /></div><p>第一次提车注意事项如下10万点须知必须注意献给所有买车的人</p></a></div>	
-		<div class="exp_con_line1_con con_end"><a href="" target=""><div class="exp_img"><img src="{TPL_LNK}image/exp/p.jpg" alt="" /></div><p>第一次提车注意事项如下10万点须知必须注意献给所有买车的人</p></a></div>	
+		<div class="exp_con_line1_con"><a href="" target=""><div class="exp_img"><img src="/{TPL_LNK}img/exp/l.jpg" alt="" /></div><p>第一次提车注意事项如下10万点须知必须注意献给所有买车的人</p></a></div>	
+		<div class="exp_con_line1_con con_end"><a href="" target=""><div class="exp_img"><img src="/{TPL_LNK}img/exp/p.jpg" alt="" /></div><p>第一次提车注意事项如下10万点须知必须注意献给所有买车的人</p></a></div>	
 		</div><div class="exp_con_line1">
-		<div class="exp_con_line1_con"><a href="" target=""><div class="exp_img"><img src="{TPL_LNK}image/exp/v.jpg" alt="" /></div><p>第一次提车注意事项如下10万点须知必须注意献给所有买车的人</p></a></div>	
-		<div class="exp_con_line1_con con_end"><a href="" target=""><div class="exp_img"><img src="{TPL_LNK}image/exp/j.jpg" alt="" /></div><p>第一次提车注意事项如下10万点须知必须注意献给所有买车的人</p></a></div>	
+		<div class="exp_con_line1_con"><a href="" target=""><div class="exp_img"><img src="/{TPL_LNK}img/exp/v.jpg" alt="" /></div><p>第一次提车注意事项如下10万点须知必须注意献给所有买车的人</p></a></div>	
+		<div class="exp_con_line1_con con_end"><a href="" target=""><div class="exp_img"><img src="/{TPL_LNK}img/exp/j.jpg" alt="" /></div><p>第一次提车注意事项如下10万点须知必须注意献给所有买车的人</p></a></div>	
 		</div>
 	</div>
 	<div style="clear:both"></div>
