@@ -48,8 +48,8 @@ class mdl extends cre{
 	}
 
 	//根据条件获取多条数据
-	public function get_dat_cnd($cnd){
-		$sql=$this->get_sql($cnd);
+	public function get_dat($cnd,$cnd_b=null){
+		$sql=$this->get_sql($cnd,$cnd_b);
 		$rs=$this->dbo->query($sql);
 		$data=$this->fetch_array($rs);
 		return ($data)?$data:false;
@@ -142,13 +142,22 @@ class mdl extends cre{
     }
 
     /*根据数组构造查询sql*/
-    public function get_sql($cnd){
+    public function get_sql($cnd,$cnd_b=null){
         if(!is_array($cnd))
             return -1;
         extract($cnd);
         if(is_array($where))$where=implode(' AND ', $where);
         if(!$fields)$fields="*";
-        $sql="SELECT {$fields} FROM {$this->tab}";
+        if($cnd_b){
+			extract($cnd_b);
+			if(!$fields_b)$fields_b="*";
+			$fields_a=trim(str_replace(',', ',a.', ','.$fields),',');
+			$fields_b=str_replace(',', ',b.',','.$fields_b);
+			$fields=$fields_a.$fields_b;
+			$join_sql="a $join $tab b on $on";
+        }
+
+        $sql="SELECT {$fields} FROM {$this->tab} $join_sql";
         if($where)
             $sql.=" WHERE $where";
         if($order)
@@ -157,7 +166,10 @@ class mdl extends cre{
             $sql.=" GROUP BY $group";
         if($limit)
         	$sql.=" LIMIT $limit";
-        return $sql.';';
+        $sql.=';';
+        if($echo)
+        	echo $sql;
+        return $sql;
     }
 }
 ?>

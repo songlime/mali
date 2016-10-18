@@ -105,7 +105,7 @@ class cre{
 	public function url_dec($uri){
 		//处理uri
 		$flag=true;
-		$arr=explode('/',$uri.'/');
+		$arr=explode('/',substr($uri, 0,strpos($uri, '?')).'/');
 		foreach ($arr as $k => $v) {//从起始标识以后开始获取数据
 			if($v==URL_SAT && $flag){
 				$flag=false;
@@ -153,8 +153,14 @@ class cre{
 		}
 		else{
 			require_once $pth.$fle;
-			$obj=new $cls($prm);
-			return $obj;
+			if(class_exists($cls))
+				$obj=new $cls($prm);
+			else
+				exit('code 3 : can\'t find class which name is '.$cls);
+			if($obj)
+				return $obj;
+			else
+				exit('code 3: can\'t new object which name is  '.$cls);
 		}
 	}
 
@@ -167,7 +173,7 @@ class cre{
 		if($ser)
 			return $ser;
 		else{
-			exit('code:1,can\'t load service');
+			exit('code:1,can\'t load service which name is '.$ser_nme);
 		}
 	}
 

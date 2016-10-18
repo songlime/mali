@@ -4,7 +4,7 @@
 *含用户信息获取,注册登陆等
 *date 2016-02-18
 */
-class news_ser extends ser{
+class nws_ser extends ser{
 	private $usr_mdl,$nws_mdl;
 
 	public function __construct(){
@@ -20,7 +20,14 @@ class news_ser extends ser{
 
 	//获取首页内容
 	public function get_index($pam=''){
-		return $this->nws_mdl->nws_idx();
+		//TO_DO 获取最新内容
+		//TO_DO 根据分类获取
+		$new_news=$this->nws_mdl->nws_idx();
+		$news_p1=$this->get_lst(1);
+		$news_p2=$this->get_lst(2);
+		$news_p3=$this->get_lst(3);
+		$news_p4=$this->get_lst(4);
+		return $array($new_news,$news_p1,$news_p2,$news_p3,$news_p4);
 	}
 
 	//获取指定分类下新闻的列表 分页

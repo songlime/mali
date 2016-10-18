@@ -1,0 +1,13 @@
+html,body,p,div,span,table,tr,td,tbody,ul,li,a,h1,h2,h3,h4,h5,h6{
+	padding:0px;
+	margin:0px;
+	border:0; 
+	outline:0;
+	text-decoration:none;
+}
+#pge{
+	
+}
+#cnt{
+	border: 1px solid red;
+}

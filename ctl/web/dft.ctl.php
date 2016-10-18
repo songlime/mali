@@ -7,33 +7,43 @@
 class dft_ctl extends ctl{
 	private $param;
 	private $smt;
-	private $tpl_pth='tpl/web/';
+	private $news;
+	private $evt;
 	public function __construct(){
 		parent::__construct();
 		$this->smt = new Smarty;
+		$this->nws=$this->new_ser('nws');
+		$this->evt=$this->new_ser('evt');
 	}
 
 	public function __destruct(){
 
 	}
 
-	public function index(){
-		$this->smt->assign('inf','马力汽车');
-		$this->smt->display(TPL_PTH.'web/index.tpl');
+	public function index($prm){
+		var_dump($prm);
+		var_dump($_GET);
+		if(!$prm)
+			$evt_lst=$this->evt->get_new();
+		elseif($prm && $prm[0]='evt' && $prm[1]){
+			$evt_lst=$this->evt->get_evt_lst((int)$prm[1]);
+		}
+		$this->smt->assign('evt_lst',$evt_lst);
+		$this->smt->assign('inf','首页|');
+		$this->smt->display(TPL_DIR.'index.tpl');
 	}
 
 	public function reg($prm){
-		$this->smt->assign('title','注册');
-		$this->smt->display(TPL_PTH.'web/reg.tpl');
+		$this->smt->assign('title','注册|');
+		$this->smt->display(TPL_DIR.'reg.tpl');
 	}
 
 	public function log($prm){
 		print_r($_GET);
-		$this->smt->assign('title','登陆');
-		$this->smt->display(TPL_PTH.'web/log.tpl');
+		$this->smt->assign('title','登陆|');
+		$this->smt->display(TPL_DIR.'log.tpl');
 	}
 }
-
 ?>
 
 

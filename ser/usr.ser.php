@@ -71,6 +71,7 @@ class usr_ser extends ser{
 	//登陆-微博登陆
 	public function log_weibo($weibo_id){
 	}
+
 	//鉴定当前会话用户身份 $jmp是否跳转到登陆页面
 	public function chk($jmp=0){
 		$uid=(int)$_SESSION['uid'];
@@ -95,7 +96,7 @@ class usr_ser extends ser{
 		}
 	}
 
-	//
+	//获取账户信息
 	public function get_acn_inf($uid){
 		
 	}
@@ -113,6 +114,7 @@ class usr_ser extends ser{
 		return ($ret)?$ret:false;
 	}
 
+	//更新用户信息
 	public function upd_usr_inf(){
 		$arr=array(
 			'username' =>"upd", 
@@ -123,6 +125,7 @@ class usr_ser extends ser{
 		$ret=$this->acu_mdl->upd_dat($arr,$cnd);
 		return ($ret)?$ret:false;
 	}
+	
 	//列出所有用户
 	public function  usr_lst($cnd=array(),$pge=1,$ppg=20){
 		$dat=$this->acu_mdl->get_dat_pge(array(),$pge,$ppg);

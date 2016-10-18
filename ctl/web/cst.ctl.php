@@ -10,15 +10,16 @@ class cst_ctl extends ctl{
 		parent::__construct();
 		$this->ssn_hnd();
 		$this->req_smt();
-		define('TPL_LNK', 'tpl/web/');
+		define('TPL', 'webxc/');
+		define('TPL_LNK', 'tpl/'.TPL);
+		define('TPL_DIR',TPL_PTH.TPL);
 	}
 
 	public function __destruct(){
-		
+		parent::__destruct();	
 	}
 
 	public function req_smt(){
-
 		require LIB_PTH.'smarty/libs/Smarty.class.php';
 	}
 }

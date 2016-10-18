@@ -31,20 +31,20 @@ define('URL_TAL', '.html,.htm,.xml');
 
 
 //数据库配置
-// $db = array(
-// 	'DB_USR' => 'root', 
-// 	'DB_PSW' => '', 
-// 	'DB_HST' => '127.0.0.1', 
-// 	'DB_PRT' => '3306', 
-// 	'DB_DB'  => 'mali',
-// 	'DB_PREFIX' => 'ml',
-// );
 $db = array(
-	'DB_USR' => 'a0621151826', 
-	'DB_PSW' => '1733f3a7', 
-	'DB_HST' => '118.193.208.80', 
+	'DB_USR' => 'root', 
+	'DB_PSW' => '', 
+	'DB_HST' => '127.0.0.1', 
 	'DB_PRT' => '3306', 
-	'DB_DB'  => 'a0621151826',
+	'DB_DB'  => 'mali',
 	'DB_PREFIX' => 'ml',
 );
+// $db = array(
+// 	'DB_USR' => 'a0621151826', 
+// 	'DB_PSW' => '1733f3a7', 
+// 	'DB_HST' => '118.193.208.80', 
+// 	'DB_PRT' => '3306', 
+// 	'DB_DB'  => 'a0621151826',
+// 	'DB_PREFIX' => 'ml',
+// );
 ?>
